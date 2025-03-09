@@ -1,6 +1,6 @@
 ## Funcionamento básico
 
-### Operadores
+## Operadores
 
 * Aritmetica basica
 ```{r}
@@ -27,7 +27,7 @@
 ((2+5-3)*10)^4/7^4
 ```
 
-### Variáveis
+## Variáveis
 
 A seta "<-" representa o simbolo de atribuição e ao escrever o nome do objeto, seu valor sera impresso. 
 Veja o exemplo:
@@ -53,7 +53,7 @@ resultado <- (((x-y)*w)^z)/(x^z)
 resultado
 ```
 
-### Funções
+## Funções
 
 Chamando funções:
 ```{r}
@@ -62,7 +62,7 @@ a<-rep("Aluno",times=3)
 a
 ```
 
-### Acessando a documentação
+## Acessando a documentação
 Estas funções buscam e exibem a documentação de funções:
 ```{r eval=FALSE}
 help(sum)
@@ -70,7 +70,7 @@ help(sum)
 ??plot
 ```
 
-### Diretório de trabalho
+## Diretório de trabalho
 
 Estas funções manipulam o diretório de trabalho:
 ```{r eval=FALSE}
