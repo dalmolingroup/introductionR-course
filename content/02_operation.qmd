@@ -3,7 +3,7 @@
 ## Operadores
 
 * Aritmetica basica
-```{r}
+```{r, results=FALSE}
 2+5         #Adicao                     
 5-2         #Subtracao
 2*5         #Multiplicacao
@@ -13,7 +13,7 @@
 ```
 
 * Relacionais
-```{r}
+```{r, results=FALSE}
 3==5	      #Igual
 3!=5	      #Diferente
 3>5	        #Maior que
@@ -23,7 +23,7 @@
 ```
 
 * Operações podem ser concatenadas:
-```{r}
+```{r, results=FALSE}
 ((2+5-3)*10)^4/7^4
 ```
 
