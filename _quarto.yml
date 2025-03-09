@@ -10,14 +10,14 @@ book:
   chapters:
     - index.qmd
     - content/01_history.qmd
-    - content/
+    - content/02_operation.qmd
   reader-mode: true
   favicon: content/images/dalmolin_icon.svg
   site-url: https://dalmolingroup.github.io/introductionR-course/
   repo-url: https://github.com/dalmolingroup/introductionR-course
   page-footer:
       O Curso de Introdução ao R é um curso construído por membros do
-      <a href="https://dalmolingroup.imd.ufrn.br/">Dalmolin Group</a>.
+      <a href="https://dalmolingroup.imd.ufrn.br/">Systems Biology Dalmolin Group</a>.
 
 knitr:
   opts_chunk:

@@ -1,0 +1,87 @@
+## Funcionamento básico
+
+### Operadores
+
+* Aritmetica basica
+```{r}
+2+5         #Adicao                     
+5-2         #Subtracao
+2*5         #Multiplicacao
+8/2         #Divisao
+2^5         #Exponenciacao
+5%%2        #Resto da divisão
+```
+
+* Relacionais
+```{r}
+3==5	      #Igual
+3!=5	      #Diferente
+3>5	        #Maior que
+3<5	        #Menor que
+3>=5	      #Maior ou igual
+3<=5	      #Menor ou igual    
+```
+
+* Operações podem ser concatenadas:
+```{r}
+((2+5-3)*10)^4/7^4
+```
+
+### Variáveis
+
+A seta "<-" representa o simbolo de atribuição e ao escrever o nome do objeto, seu valor sera impresso. 
+Veja o exemplo:
+```{r}
+x <- 1
+x
+```
+
+Caso algum valor seja atribuído ao mesmo objeto, ele será sobrescrito:
+```{r}
+x <- "gol do gremio!"
+x
+```
+
+Os resultados de operações podem ser salvos em objetos:
+```{r}
+x<-2+5
+y=5-2
+2*5->w
+z<-8/2
+
+resultado <- (((x-y)*w)^z)/(x^z)
+resultado
+```
+
+### Funções
+
+Chamando funções:
+```{r}
+sum(1,3,5)
+a<-rep("Aluno",times=3)
+a
+```
+
+### Acessando a documentação
+Estas funções buscam e exibem a documentação de funções:
+```{r eval=FALSE}
+help(sum)
+?sd
+??plot
+```
+
+### Diretório de trabalho
+
+Estas funções manipulam o diretório de trabalho:
+```{r eval=FALSE}
+# verifica o caminho para o diretório de trabalho
+getwd()
+# define o diretório de trabalho
+setwd()
+# lista os arquivos presentes no diretório de trabalho
+list.files()
+# carrega um arquivo binário do diretório de trabalho para o ambiente
+load()
+# salva o conteúdo de uma variável no diretório de trabalho
+save()
+```
