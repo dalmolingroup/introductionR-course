@@ -1,0 +1,268 @@
+## Data.frames
+
+Um `data.frame` é um tipo especial de lista, onde todos os elementos devem possuir o mesmo length. Por ser uma lista, cada posição comporta elementos de diferentes classes. Do ponto de vista prático, o `data.frame` funciona como uma planilha bidimensional formado por vetores de mesmo tamanho, sendo cada vetor uma coluna:
+
+```{r}
+number<-c(1, 2, 3, 4, 5)
+letter<-c("x", "y", "z", "w", "j")
+logical<- c(TRUE, FALSE, FALSE, TRUE, FALSE)
+seq<-1:10
+dt<-data.frame(number, letter, logical)
+class(dt)
+# usamos $ para acessar as colunas de um data.frame
+dt$letter               
+# vetores de caracteres são interpretados como fatores
+class(dt$letter)          
+# argumento stringsAsFactors = F altera este comportamento padrão
+dt<-data.frame(number, letter, logical, stringsAsFactors = F) 
+dt$letter
+class(dt$letter)
+# data.frames possuem colnames e rownames como atributos
+attributes(dt)                
+colnames(dt)
+row.names(dt)
+# acessamos data.frames da mesma forma que matrizes
+dt[5,2]                       
+```
+
+### Trabalhando com data.frames
+
+Para acessar data.frames podemos usar os operadores `[]`, `[[]]` e `$`:
+
+```{r}
+dt<-data.frame(number=c(1, 2, 3, 4, 5),
+               letter = c("x", "y", "z", "w", "j"),
+               logical = c(TRUE, FALSE, FALSE, TRUE, FALSE))
+# [[ ]] acessa cada coluna por posição
+dt[[1]]              
+# [ ] acessa as coordenadas [linha, coluna]
+dt[,1]               
+# $ acessa a coluna pelo nome
+dt$number            
+# carrega o data.frame mtcars
+cars<-mtcars        
+# mostra as 6 primeiras linhas
+head(cars)          
+# mostra as 6 ultimas linhas
+tail(cars)
+```
+
+```{r}
+#Ex.1: faca um data.frame somente com as informacoes dos carros com mais de 100hp
+
+
+
+#
+```
+
+```{r}
+# data.frames possuem colnames e rownames
+colnames(dt)
+row.names(dt)
+# podemos alterar colnames e rownames
+row.names(dt)<-c("a", "b", "c", "d", "e")
+# alterando apenas a posição 2
+colnames(dt)[2]<-"letras"     
+# podemos alterar valores específicos de um data.frame
+dt[3,1]<-"10"
+dt$logical<-as.numeric(dt$logical)
+dt$letras<-NA
+```
+
+É possível verificar as ocorrencias de um data.frame em outro:
+
+```{r}
+biometria<-data.frame(nomes=c("Carlos", "Roberto", "Olivio", "Joel"),
+                      altura=c(180, 187, 155, 168),
+                      peso=c(80, 90, 98, 64))
+biometria
+esportes<-data.frame(nomes=c("Carlos", "Roberto", "Olivio", "Jomar"),
+                     esportes=c("futebol", "remo", "sumo", "maratona"))
+esportes
+# retorna um vetor lógico
+biometria$nomes %in% esportes$nomes
+# pode ser usado como índice
+idx<-biometria$nomes %in% esportes$nomes    
+x<-biometria[idx,]
+x
+# ordenando data.frames por uma coluna
+biometria<-biometria[with(biometria, order(altura)), ]
+biometria
+```
+
+```{r}
+#Ex.2: ordene o data.frame cars com a coluna "mpg" em ordem crescente
+
+
+
+#
+```
+
+Unindo data.frames com a função `merge()`:
+
+::: callout-important
+Independe da ordem dos data.framesa busca é feita pelo nome, não pela ordem o resultado sempre virá em ordem alfabética
+:::
+
+```{r}
+unido<-merge(biometria, esportes, by="nomes")
+unido
+# as informações não disponíveis são preenchidas por NA
+# com todos os presentes no primeiro
+unido<-merge(biometria, esportes, by="nomes", all.x=T)
+unido
+# com todos os presentes no segundo
+unido<-merge(biometria, esportes, by="nomes", all.y=T)
+unido
+# com todos presentes
+unido<-merge(biometria, esportes, by="nomes", all=T)
+unido
+```
+
+```{r}
+#load("Data/COGs.RData")
+```
+
+```{r}
+#Ex.3: verifique se todos os "cog_id" do objeto cogids est?o contidos no objeto cog.human.data
+
+
+
+#
+```
+
+```{r}
+#Ex.4: o arquivo cog.human.data contem 3 tipos de OG: COG, NOG e KOG
+
+
+
+#
+```
+
+```{r}
+#Ex.5: construa tres data frames contendo cada um somente um tipo de OG (i.e. COG, NOG e KOG)
+
+
+
+#
+```
+
+```{r}
+#Ex.6: verifique qual dos tres apresenta maior numero de OG diferentes
+
+
+
+#
+```
+
+## Desafio
+
+::: callout-tip
+## Pratique sem IA!
+
+Os desafios a seguir foram criados para ajudá-lo a desenvolver suas habilidades de forma independente.\
+Evite o uso de Inteligência Artificial e tente resolver os problemas por conta própria.\
+Aprender com a prática fortalecerá seu raciocínio e aprofundará seu conhecimento! 🚀
+:::
+
+1.  **Crie os dataframes abaixo:**
+
+```{r}
+peso <- data.frame("Nome" = c("Bruno", "Dionisio","Eduardo", "Ana", "Silvia", "Elizete", "Renata", "Arlete", "Lucas"),
+                   "Peso" = c(73, 68, 65, 73, 60, 65, 70, 83, 68), stringsAsFactors = F)
+
+altura <- data.frame("Nome" = c("Davi", "Kevin","Eduardo","Lucas", "Antonio", "Moises", "Dionisio", "Ana", "Renata"),
+                     "Altura" = c(150, 193, 152, 175, 191, 173, 180, 163, 178), stringsAsFactors = F)
+
+idade <- data.frame("Nome" = c("Eloise", "Ana","Flavia","Dayse", "Eduardo", "Silvia", "Dionisio", "Renata", "Bruno"),
+                    "Idade" = c(24, 27, 30, 21, 37, 18, 43, 26, 47), stringsAsFactors = F)
+
+profissao <- data.frame("Nome" = c("Dionisio", "Renata","Ana","Flavia", "Thais", "Daniel", "Fernanda", "Bárbara", "Henrique"),
+                        "Profissao" = c("Programador", "Pesquisadora", "Advogada", "Farmaceutica", "Bombeira Civil", "Cabelereiro",
+                                        "Cozinheira", "Estiliesta", "Professor"), stringsAsFactors = F)
+```
+
+a)  No dataframe peso, verifique quantos valores iguais de peso existem.
+```{r}
+#
+```
+
+b)  No dataframe altura, verifique quantas e quais pessoas têm entre 163cm e 180cm.
+```{r}
+#
+```
+
+c)  Ordene o dataframe idade de forma descrescente.
+```{r}
+#
+```
+
+d)  Ordene o dataframe profissao lexicograficamente.
+```{r}
+#
+```
+
+e)  Verifique quais informações de Dionisio estão presentes nos 4 dataframes.
+```{r}
+#
+```
+
+f)  Altere a profissão da Renata para "Cientista"
+```{r}
+#
+```
+
+g)  Retorne quantas pessoas possuem todas as informações (Peso, Altura, Idade e Profissão) e armazene em um novo dataframe
+```{r}
+#
+```
+
+2.  **Com os seguintes dataframes, responda:**
+
+```{r}
+amostra1 <- data.frame("genero" = c("Prevotella", "Prevotella", "Prevotella", "Streptococcus","Neisseria", "Neisseria", 
+                                    "Lactobacillus", "Bacteroides", "Anaerosporomusa"),
+                       "especie" = c("Prevotella_copri", "Prevotella_denticola", "Prevotella_ruminicola", "Streptococcus_infantarius", 
+                                     "Neisseria_gonorrhoeae", "Neisseria_meningitidis", "Lactobacillus_iners", "Bacteroides_xylanisolvens",
+                                     "Anaerosporomusa_subterranea"), stringsAsFactors = F)
+
+amostra2 <- data.frame("genero" = c("Prevotella", "Prevotella", "Streptococcus", "Streptococcus", "Neisseria", "Neisseria", "Bacteroides", 
+                                    "Fusobacterium", "Pseudoalteromonas", "Achromobacter", "Aggregatibacte"),
+                       "especie" = c("Prevotella_denticola", "Prevotella_ruminicola", "Streptococcus_infantarius", "Streptococcus_equi", 
+                                     "Neisseria_gonorrhoeae", "Neisseria_meningitidis", "Bacteroides_xylanisolvens", "Fusobacterium_nucleatum", 
+                                     "Pseudoalteromonas_sp._S558", "Achromobacter_sp._KAs_3-5", "Aggregatibacter_actinomycetemcomitans"), stringsAsFactors = F)
+```
+
+a)  Quantas espécies da amostra 1 também estão presentes na amostra 2?
+```{r}
+#
+```
+
+b)  Quantas espécies da amostra 2 também estão presentes na amostra 1?
+```{r}
+#
+```
+
+c)  Quais as posições e os valores dessas espécies?
+```{r}
+#
+```
+
+3.  **Considere o dataframe abaixo:**
+
+```{r}
+df <- data.frame(col1 = 1:3, col2 = 2:4, col3 = 3:5)
+```
+
+Faça a seleção dos elementos do dataframe utilizando duas abordagens diferentes: a abordagem utilizada na indexação de matrizes e a abordagem para indexação de listas.
+
+a) Selecione a primeira coluna
+```{r}
+#
+```
+
+b) 3º elemento da 2ª coluna
+```{r}
+#
+```
+

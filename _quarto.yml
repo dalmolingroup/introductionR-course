@@ -11,7 +11,9 @@ book:
     - index.qmd
     - content/01_history.qmd
     - content/02_operation.qmd
-    - content/03_Robjects.qmd
+    - content/03_vectors.qmd
+    - content/04_matrix_lists_arrays.qmd
+    - content/05_dataframes.qmd
   reader-mode: true
   favicon: content/images/dalmolin_icon.svg
   site-url: https://dalmolingroup.github.io/introductionR-course/
