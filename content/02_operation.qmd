@@ -62,7 +62,7 @@ resultado
 
 Chamando funções:
 
-```{r}
+```{r, class.source="standard-chunk"}
 sum(1,3,5)
 a<-rep("Aluno",times=3)
 a
@@ -115,7 +115,7 @@ Até agora foram 8 partidas:
 
 1.  **Crie dois objetos que contenham o número de cestas que cada um fez:**
 
-```{r}
+```{r, class.source="practice-chunk"}
 #
 ```
 

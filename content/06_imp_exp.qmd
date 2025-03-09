@@ -100,7 +100,7 @@ Evite o uso de Inteligência Artificial e tente resolver os problemas por conta 
 Aprender com a prática fortalecerá seu raciocínio e aprofundará seu conhecimento! 🚀
 :::
 
-Este exercício será feito usando o arquivo 'happiness.csv' em [[content/data/hapiness.csv]] 
+Este exercício será feito usando o arquivo 'happiness.csv' em `content/data/hapiness.csv` 
 
 1. Neste exercício, vamos importar uma tabela (em arquivo de texto) como um dataframe, fazer algumas operações e em seguida vamos salvar o resultado em um outro arquivo de texto. Antes de importar o arquivo, verifique sua estrutura (como as colunas estão separadas, se tem cabeçalho, etc.)
 
