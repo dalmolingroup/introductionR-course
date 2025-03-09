@@ -88,4 +88,50 @@ Exemplo:
 write.table(table1, file = "arquivo.txt", sep = "\t", row.names = FALSE, quote = FALSE)
 ```
 
-Além disso, também como a função `read.table()`, `write.table()` possui outras funções genéricas como `write.csv()`, por exemplo, a qual possui o argumento `sep = ","` por default. 
+Além disso, também como a função `read.table()`, `write.table()` possui outras funções genéricas como `write.csv()`, por exemplo, a qual possui o argumento `sep = ","` por default.
+
+## Desafio
+
+::: callout-tip
+## Pratique sem IA!
+
+Os desafios a seguir foram criados para ajudá-lo a desenvolver suas habilidades de forma independente.\
+Evite o uso de Inteligência Artificial e tente resolver os problemas por conta própria.\
+Aprender com a prática fortalecerá seu raciocínio e aprofundará seu conhecimento! 🚀
+:::
+
+Este exercício será feito usando o arquivo 'happiness.csv' em [[content/data/hapiness.csv]] 
+
+1. Neste exercício, vamos importar uma tabela (em arquivo de texto) como um dataframe, fazer algumas operações e em seguida vamos salvar o resultado em um outro arquivo de texto. Antes de importar o arquivo, verifique sua estrutura (como as colunas estão separadas, se tem cabeçalho, etc.)
+
+
+a) Importe o arquivo corretamente e o armazene em uma variável. Obs.: A tabela possui alguns campos numéricos onde o separador decimal é uma vírgula. Importe a tabela de modo que as vírgulas sejam transformadas em pontos (procure ajuda na documentação das funções de importação vistas na aula).
+```{r}
+#
+```
+
+b) Verifique se a classe das colunas do dataframe condizem com o tipo de dado armazenado. Por exemplo, a coluna dos países é um vetor de caracter?
+```{r}
+#
+```
+
+c) Crie um subset do dataframe contendo apenas as informações dos países da América Latina e Caribe.
+```{r}
+#
+```
+
+d) De acordo com o rank de felicidade, qual país da América Latina é o mais feliz?
+```{r}
+#
+```
+
+e) Crie um outro subset contendo apenas os países europeus. Calcule a média de felicidade (baseando-se no score de felicidade) dos países europeus e dos países da América Latina. Em qual região as  pessoas são mais felizes?
+```{r}
+#
+```
+
+f) Salve o dataframe com as informações da América Latina em um arquivo de texto. Ele deve utilizar como separador o ';'. 
+```{r}
+#
+```
+
