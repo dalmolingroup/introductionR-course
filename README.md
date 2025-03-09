@@ -1,4 +1,4 @@
-# Curso *Introdução ao R*
+# Curso de *Introdução ao R*
 
 Neste repositório está o material para o curso **Introdução ao R**,
 organizado pelo Prof. Rodrigo Dalmolin, do Centro Multiusuário de Bioinformática da UFRN.
