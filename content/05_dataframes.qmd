@@ -47,13 +47,14 @@ head(cars)
 tail(cars)
 ```
 
+::: {.callout-tip collapse="true"}
+## Ex. 1: Criando um data.frame com carros com mais de 100hp
+
 ```{r}
-#Ex.1: faca um data.frame somente com as informacoes dos carros com mais de 100hp
-
-
-
-#
+cars_100hp <- subset(mtcars, hp > 100)
+cars_100hp
 ```
+:::
 
 ```{r}
 # data.frames possuem colnames e rownames
@@ -90,18 +91,19 @@ biometria<-biometria[with(biometria, order(altura)), ]
 biometria
 ```
 
+::: {.callout-tip collapse="true"}
+## Ex. 2: Ordenando o data.frame cars pela coluna "mpg" em ordem crescente
+
 ```{r}
-#Ex.2: ordene o data.frame cars com a coluna "mpg" em ordem crescente
-
-
-
-#
+cars_sorted <- cars[order(cars$mpg), ]
+cars_sorted
 ```
+:::
 
 Unindo data.frames com a função `merge()`:
 
 ::: callout-important
-Independe da ordem dos data.framesa busca é feita pelo nome, não pela ordem o resultado sempre virá em ordem alfabética
+Independe da ordem dos data.frames a busca é feita pelo nome, não pela ordem o resultado sempre virá em ordem alfabética
 :::
 
 ```{r}
@@ -123,37 +125,42 @@ unido
 #load("Data/COGs.RData")
 ```
 
-```{r}
-#Ex.3: verifique se todos os "cog_id" do objeto cogids est?o contidos no objeto cog.human.data
+::: {.callout-tip collapse="true"}
+## Ex. 3: Verificando se todos os "cog_id" do objeto cogids estão contidos no objeto cog.human.data
 
-
-
-#
+```{r eval=FALSE}
+cogids_in_human <- cogids %in% cog.human.data$cog_id
+all(cogids_in_human)
 ```
+:::
 
-```{r}
-#Ex.4: o arquivo cog.human.data contem 3 tipos de OG: COG, NOG e KOG
+::: {.callout-tip collapse="true"}
+## Ex. 4: Contando os tipos de OG no arquivo cog.human.data
 
-
-
-#
+```{r eval=FALSE}
+table(cog.human.data$OG_type)
 ```
+:::
 
-```{r}
-#Ex.5: construa tres data frames contendo cada um somente um tipo de OG (i.e. COG, NOG e KOG)
+::: {.callout-tip collapse="true"}
+## Ex. 5: Criando data.frames separados para cada tipo de OG
 
-
-
-#
+```{r eval=FALSE}
+cog_data <- subset(cog.human.data, OG_type == "COG")
+nog_data <- subset(cog.human.data, OG_type == "NOG")
+kog_data <- subset(cog.human.data, OG_type == "KOG")
 ```
+:::
 
-```{r}
-#Ex.6: verifique qual dos tres apresenta maior numero de OG diferentes
+::: {.callout-tip collapse="true"}
+## Ex. 6: Verificando qual dos três data.frames tem mais OG diferentes
 
-
-
-#
+```{r eval=FALSE}
+length(unique(cog_data$cog_id))
+length(unique(nog_data$cog_id))
+length(unique(kog_data$cog_id))
 ```
+:::
 
 ## Desafio
 
@@ -183,39 +190,18 @@ profissao <- data.frame("Nome" = c("Dionisio", "Renata","Ana","Flavia", "Thais",
 ```
 
 a)  No dataframe peso, verifique quantos valores iguais de peso existem.
-```{r}
-#
-```
 
 b)  No dataframe altura, verifique quantas e quais pessoas têm entre 163cm e 180cm.
-```{r}
-#
-```
 
 c)  Ordene o dataframe idade de forma descrescente.
-```{r}
-#
-```
 
 d)  Ordene o dataframe profissao lexicograficamente.
-```{r}
-#
-```
 
 e)  Verifique quais informações de Dionisio estão presentes nos 4 dataframes.
-```{r}
-#
-```
 
 f)  Altere a profissão da Renata para "Cientista"
-```{r}
-#
-```
 
 g)  Retorne quantas pessoas possuem todas as informações (Peso, Altura, Idade e Profissão) e armazene em um novo dataframe
-```{r}
-#
-```
 
 2.  **Com os seguintes dataframes, responda:**
 
@@ -234,19 +220,10 @@ amostra2 <- data.frame("genero" = c("Prevotella", "Prevotella", "Streptococcus",
 ```
 
 a)  Quantas espécies da amostra 1 também estão presentes na amostra 2?
-```{r}
-#
-```
 
 b)  Quantas espécies da amostra 2 também estão presentes na amostra 1?
-```{r}
-#
-```
 
 c)  Quais as posições e os valores dessas espécies?
-```{r}
-#
-```
 
 3.  **Considere o dataframe abaixo:**
 
@@ -257,12 +234,6 @@ df <- data.frame(col1 = 1:3, col2 = 2:4, col3 = 3:5)
 Faça a seleção dos elementos do dataframe utilizando duas abordagens diferentes: a abordagem utilizada na indexação de matrizes e a abordagem para indexação de listas.
 
 a) Selecione a primeira coluna
-```{r}
-#
-```
 
 b) 3º elemento da 2ª coluna
-```{r}
-#
-```
 

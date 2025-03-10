@@ -100,29 +100,18 @@ x <- 1:18
 
 a)  Com este vetor, construa uma matriz de 6 linhas e 3 colunas de duas maneiras diferentes.
 
-```{r}
-#
-```
 
 b)  Adicione o seguinte vetor como um coluna da matriz:
 
 ```{r}
 v <- letters[1:6]
-
-#
 ```
 
 c)  O que acontece quando juntamos este vetor à matriz?
 
-```{r}
-#
-```
 
 d)  Atribua nomes às colunas e às linhas:
 
-```{r}
-#
-```
 
 2.  **Considere a seguinte matriz:**
 
@@ -133,21 +122,12 @@ m <- matrix(sample(1:100, 20), nrow = 4, ncol = 5)
 
 a)  Ordene, de maneira crescente, as linhas da matriz de acordo com os valores da coluna 1.
 
-```{r}
-#
-```
 
 b)  Exclua as colunas 2 e 4 desta matriz.
 
-```{r}
-#
-```
 
 c)  Crie um outro objeto para guardar o valor da soma das colunas desta matriz.
 
-```{r}
-#
-```
 
 3.  **Considere o objeto 'x':**
 
@@ -169,21 +149,12 @@ a)  Como os objetos da classe das listas diferem dos vetores atômicos?
 
 b)  Use a função 'length' na lista 'ls' acima. O que ela retorna?
 
-```{r}
-#
-```
 
 c)  Qual a classe de cada elemento desta lista?
 
-```{r}
-#
-```
 
 d)  Atribua nomes a cada um elementos desta lista.
 
-```{r}
-#
-```
 
 e)  Qual é a diferença entre as saídas dos dois comandos abaixo?
 

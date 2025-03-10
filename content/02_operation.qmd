@@ -115,24 +115,8 @@ Até agora foram 8 partidas:
 
 1.  **Crie dois objetos que contenham o número de cestas que cada um fez:**
 
-```{r, class.source="practice-chunk"}
-#
-```
-
 2.  **Verifique a classe de cada um dos objetos:**
-
-```{r}
-#
-```
 
 3.  **Com a utilização da ajuda do R, procure por uma função que possibilite o cálculo de médias. Com ela, calcule as médias de cestas dos dois jogadores e atribua estes valores a objetos diferentes:**
 
-```{r}
-#
-```
-
 4.  **Compare os valores das médias calculadas usando os operadores lógicos "\>" e "\<". Quem teve um desempenho médio melhor?**
-
-```{r}
-#
-```
