@@ -12,13 +12,17 @@ complexo<-4i
 
 A função `class()` pode ser usada para acessar a classe de um determinado objeto:
 
-```{r, class.source="practice-chunk"}
-# EXp 1: aplique a cada um dos objetos acima a funcao class()
+::: {.callout-tip collapse="true"}
+## Ex 1: Aplique a função class()
 
-
-
-#
+```{r}
+class(number)
+class(letter)
+class(logico)
+class(seq)
+class(complexo)
 ```
+:::
 
 A função `vector()` cria vetores com valores padrões de uma determinada classe:
 
@@ -33,21 +37,23 @@ x<-1                          #numeros sao salvos como numeric
 x<-1L                         #para explicitar integer, usa-se L
 ```
 
-```{r}
-#EXp 2: crie o vetor "alfa" contendo as 5 primeiras consoantes do alfabeto
+::: {.callout-tip collapse="true"}
+## Ex 2: Crie o vetor "alfa" contendo as 5 primeiras consoantes do alfabeto
 
-
-
-#
+```{r }
+alfa <- c("b", "c", "d", "f", "g")
+alfa
 ```
+:::
 
-```{r}
-#EXp 3: crie um integer "primos" com os 5 primeiros numeros primos
+::: {.callout-tip collapse="true"}
+## Ex 3: Crie um integer "primos" com os 5 primeiros números primos
 
-
-
-#
+```{r }
+primos <- c(2L, 3L, 5L, 7L, 11L)
+primos
 ```
+:::
 
 ### Hierarquia de classes
 
@@ -90,29 +96,32 @@ c
 class(c)
 ```
 
-```{r}
-#Ex.5: verifique se "x" e "a" sao iguais
-
-
-
-#
-```
+::: {.callout-tip collapse="true"}
+## Ex.4: Verifique se "x" e "a" são iguais
 
 ```{r}
-#Ex.6: tente converter os vetores (a, b, c) em numeric
-
-
-
-#
+identical(x, a)
 ```
+:::
+
+::: {.callout-tip collapse="true"}
+## Ex.5: Tente converter os vetores (a, b, c) em numeric
 
 ```{r}
-#Ex.7: crie um vetor de caracteres de "a" ate "d" e o converta em numerico
-
-
-
-#
+as.numeric(a)
+as.numeric(b)
+as.numeric(c)
 ```
+:::
+
+::: {.callout-tip collapse="true"}
+## Ex.6: Crie um vetor de caracteres de "a" até "d" e o converta em numérico
+
+```{r}
+char_vec <- c("a", "b", "c", "d")
+as.numeric(char_vec) # Retornará NA pois não há conversão direta
+```
+:::
 
 ### Valores não disponíveis ou impossíveis
 
@@ -215,13 +224,15 @@ letter[letter<"k"]
 letter=="z"
 ```
 
+::: {.callout-tip collapse="true"}
+## Ex. 7: Crie um vetor de 1 até 10 e substitua o valor da oitava posição pelo valor da primeira posição.
+
 ```{r}
-#Ex. 8: crie um vetor de 1 até 10 e substitua o valor da oitava posição pelo valor da primeira posição.
-
-
-
-#
+vec <- 1:10
+vec[8] <- vec[1]
+vec
 ```
+:::
 
 Funções para identificar valores extremos:
 
@@ -243,21 +254,22 @@ s>0
 which(s>0)              
 ```
 
-```{r}
-#Ex.9: quantos valores de s sao maiores que 0?
-
-
-
-#
-```
+::: {.callout-tip collapse="true"}
+## Ex.8: Quantos valores de s são maiores que 0?
 
 ```{r}
-#Ex.10: faca um vetor contendo os valores de S maiores do que 0.
-
-
-
-#
+sum(s > 0)
 ```
+:::
+
+::: {.callout-tip collapse="true"}
+## Ex.9: Faça um vetor contendo os valores de s maiores do que 0.
+
+```{r}
+positivos <- s[s > 0]
+positivos
+```
+:::
 
 Funções de ordenamento:
 
@@ -274,16 +286,16 @@ sample(x)
 # elimina as replicatas
 unique(x)
 # exibe um vetor lógico referente à posição das replicatas
-duplicated(x)           
+duplicated(x)
 ```
+
+::: {.callout-tip collapse="true"}
+## Ex.10: Quantos duplicados existem em x?
 
 ```{r}
-#Ex.11: quantos duplicados existem em x?
-
-
-
-#
+sum(duplicated(x))
 ```
+:::
 
 ## Strings
 
@@ -349,23 +361,13 @@ Evite o uso de Inteligência Artificial e tente resolver os problemas por conta 
 Aprender com a prática fortalecerá seu raciocínio e aprofundará seu conhecimento! 🚀
 :::
 
-1.  **Considere os seguintes elementos: 1, 4, 5, "a", 10L e TRUE**
+(@)  **Considere os seguintes elementos: 1, 4, 5, "a", 10L e TRUE**
 
-<!-- -->
+  a)  Crie um vetor com os elementos acima.
+  
+  b)  Verifique a classe do vetor criado. Se houve coerção implícita, explique.
 
-a)  Crie um vetor com os elementos acima.
-
-```{r}
-#
-```
-
-b)  Verifique a classe do vetor criado. Se houve coerção implícita, explique.
-
-```{r}
-#
-```
-
-2.  **Considere as operações vetorizadas:**
+(@)  **Considere as operações vetorizadas:**
 
 ```{r, results=FALSE}
 # a)
@@ -377,7 +379,7 @@ c(1, 3, 5) + c(2, 4, 6, 8)
 
 Explique o que ocorre em cada uma das operações acima.
 
-3.  **Considere o seguinte vetor:**
+(@)  **Considere o seguinte vetor:**
 
 ```{r, results=FALSE}
 x <- c(-1, 45, -6, 88, 30, 4)
@@ -385,30 +387,10 @@ x <- c(-1, 45, -6, 88, 30, 4)
 
 a)  Obtenha um outro vetor a partir deste que contenha apenas os elementos da posição 2 e da última posição.
 
-```{r}
-#
-```
-
 b)  Obtenha um outro vetor a partir de x que contenha todos os elementos, exceto o 3º elemento.
-
-```{r}
-#
-```
 
 c)  Atribua um nome para cada um dos elementos do vetor x.
 
-```{r}
-#
-```
-
 d)  Obtenha a posição do valor máximo contido no vetor x.
 
-```{r}
-#
-```
-
 e)  Obtenha um outro vetor a partir de x com todos os valores positivos.
-
-```{r}
-#
-```
