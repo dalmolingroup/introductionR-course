@@ -105,8 +105,6 @@ b)  Adicione o seguinte vetor como um coluna da matriz:
 
 ```{r}
 v <- letters[1:6]
-
-#
 ```
 
 c)  O que acontece quando juntamos este vetor à matriz?
