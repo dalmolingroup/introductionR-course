@@ -237,9 +237,6 @@ A função externa ('f1') deve fazer 3 coisas: - Deve chamar a função 'f2' - I
 
 Uma vez definidas estas funções, chame a função externa e responda: os ambientes exibidos são os mesmos? Justifique.
 
-```{r}
-#
-```
 
 2.  Com base nas regras de escopo do R, justifique o resultado das chamadas das funções abaixo:
 
@@ -318,9 +315,6 @@ c)  Ainda sobre o dataset 'network', crie uma função que receba como argumento
 
     1712 CHUK CHEK1 0.679
 
-```{r}
-#
-```
 
 d)  Importe o arquivo `contents/data/COGs.RData`, disponível no sigaa, que foi usado na aula de Importação e Exportação de dados. Use o dataframe `contents/data/cog.human.data` load("COGs.RData")
 
