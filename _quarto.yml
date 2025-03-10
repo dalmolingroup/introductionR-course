@@ -22,7 +22,7 @@ book:
   repo-url: https://github.com/dalmolingroup/introductionR-course
   page-footer:
       O Curso de Introdução ao R é um curso construído por membros do
-      <a href="https://dalmolingroup.imd.ufrn.br/">Systems Biology Dalmolin Group</a>.
+      <a href="https://dalmolingroup.imd.ufrn.br/">Dalmolin Systems Biology Group</a>.
 
 knitr:
   opts_chunk:
