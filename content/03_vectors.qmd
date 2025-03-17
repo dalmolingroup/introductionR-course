@@ -55,7 +55,7 @@ primos
 ```
 :::
 
-### Hierarquia de classes
+## Hierarquia de classes
 
 Vetores comportam apenas uma classe de elementos. Quando um vetor é criado com valores pertecentes a classes distintas, é feita uma conversão implícita. Um valor `logical` é convertido para `numeric`, e um valor `numeric` é convertido para `character`:
 
@@ -123,7 +123,7 @@ as.numeric(char_vec) # Retornará NA pois não há conversão direta
 ```
 :::
 
-### Valores não disponíveis ou impossíveis
+## Valores não disponíveis ou impossíveis
 
 Valores não disponíveis são representados por `NA` (*Not Available*), e valores impossíveis, como o resultado de uma divisão por 0, são representados por `NaN` (*Not a Number*).
 
@@ -142,7 +142,7 @@ sum(a)
 sum(a, na.rm=TRUE)
 ```
 
-### Atributos de objetos
+## Atributos de objetos
 
 Todos os objetos possuem atributos:
 
@@ -157,7 +157,7 @@ x
 attributes(x)
 ```
 
-### Fator
+## Fator
 
 Um vetor da classe `factor` é um vetor categórico que possui o atributo `levels`:
 
@@ -168,7 +168,7 @@ x
 z
 ```
 
-### Trabalhando com vetores
+## Trabalhando com vetores
 
 No R as operações são vetorizadas:
 
@@ -327,7 +327,7 @@ grep("cat$", x, ignore.case = T)
 grepl("cat$", x, ignore.case = T)
 ```
 
-### Expressões regulares
+## Expressões regulares
 
 | Metacaractere | Funcionalidade     |
 |---------------|--------------------|
