@@ -29,6 +29,7 @@ knitr:
     message: false
     eval: false
     warning: false
+    results: false
 
 format:
   html:
