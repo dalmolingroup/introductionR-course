@@ -27,6 +27,7 @@ book:
 knitr:
   opts_chunk:
     message: false
+    eval: false
     warning: false
 
 format:
