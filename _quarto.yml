@@ -24,12 +24,13 @@ book:
       O Curso de Introdução ao R é um curso construído por membros do
       <a href="https://dalmolingroup.imd.ufrn.br/">Dalmolin Systems Biology Group</a>.
 
+execute:
+    eval: false
+
 knitr:
   opts_chunk:
     message: false
-    eval: false
     warning: false
-    results: false
 
 format:
   html:
