@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR" xml:lang="pt-BR"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.553">
+<meta name="generator" content="quarto-1.6.42">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Curso de Introdução ao R - 5&nbsp; Data.frames</title>
+
+
+<title>5&nbsp; Data.frames – Curso de Introdução ao R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -53,6 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
+
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
@@ -68,12 +72,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-de84f8d6bb715db06a919283c2d1e787.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-9a023c9ade86a60361e96e3e3f11bc54.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-8b3ea0116ff0d93d4ffd0e90a97ee776.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-162fe357cf1f427b4ce1edfda09a2b40.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -100,24 +105,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Procurar"
   }
 }</script>
+
+
 </head>
+
 <body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../content/05_dataframes.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data.frames</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Procurar" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Curso de Introdução ao R</a> 
         <div class="sidebar-tools-main tools-wide">
@@ -138,7 +152,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-<li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Curso de Introdução ao R</span></a>
@@ -187,22 +201,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
     </ul>
-</div>
-</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Índice</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Índice</h2>
    
   <ul>
-<li><a href="#trabalhando-com-data.frames" id="toc-trabalhando-com-data.frames" class="nav-link active" data-scroll-target="#trabalhando-com-data.frames"><span class="header-section-number">5.0.1</span> Trabalhando com data.frames</a></li>
+  <li><a href="#trabalhando-com-data.frames" id="toc-trabalhando-com-data.frames" class="nav-link active" data-scroll-target="#trabalhando-com-data.frames"><span class="header-section-number">5.0.1</span> Trabalhando com data.frames</a></li>
   <li><a href="#desafio" id="toc-desafio" class="nav-link" data-scroll-target="#desafio"><span class="header-section-number">5.1</span> Desafio</a></li>
-  </ul></nav>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title">
-<span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data.frames</span>
-</h1>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Data.frames</span></h1>
 </div>
 
 
@@ -216,48 +234,51 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><p>Um <code>data.frame</code> é um tipo especial de lista, onde todos os elementos devem possuir o mesmo length. Por ser uma lista, cada posição comporta elementos de diferentes classes. Do ponto de vista prático, o <code>data.frame</code> funciona como uma planilha bidimensional formado por vetores de mesmo tamanho, sendo cada vetor uma coluna:</p>
+</header>
+
+
+<p>Um <code>data.frame</code> é um tipo especial de lista, onde todos os elementos devem possuir o mesmo length. Por ser uma lista, cada posição comporta elementos de diferentes classes. Do ponto de vista prático, o <code>data.frame</code> funciona como uma planilha bidimensional formado por vetores de mesmo tamanho, sendo cada vetor uma coluna:</p>
 <div class="cell">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">number</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span>, <span class="fl">4</span>, <span class="fl">5</span><span class="op">)</span></span>
-<span><span class="va">letter</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"x"</span>, <span class="st">"y"</span>, <span class="st">"z"</span>, <span class="st">"w"</span>, <span class="st">"j"</span><span class="op">)</span></span>
-<span><span class="va">logical</span><span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span><span class="op">)</span></span>
-<span><span class="va">seq</span><span class="op">&lt;-</span><span class="fl">1</span><span class="op">:</span><span class="fl">10</span></span>
-<span><span class="va">dt</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">number</span>, <span class="va">letter</span>, <span class="va">logical</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">dt</span><span class="op">)</span></span>
-<span><span class="co"># usamos $ para acessar as colunas de um data.frame</span></span>
-<span><span class="va">dt</span><span class="op">$</span><span class="va">letter</span>               </span>
-<span><span class="co"># vetores de caracteres são interpretados como fatores</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">dt</span><span class="op">$</span><span class="va">letter</span><span class="op">)</span>          </span>
-<span><span class="co"># argumento stringsAsFactors = F altera este comportamento padrão</span></span>
-<span><span class="va">dt</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="va">number</span>, <span class="va">letter</span>, <span class="va">logical</span>, stringsAsFactors <span class="op">=</span> <span class="cn">F</span><span class="op">)</span> </span>
-<span><span class="va">dt</span><span class="op">$</span><span class="va">letter</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">dt</span><span class="op">$</span><span class="va">letter</span><span class="op">)</span></span>
-<span><span class="co"># data.frames possuem colnames e rownames como atributos</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/attributes.html">attributes</a></span><span class="op">(</span><span class="va">dt</span><span class="op">)</span>                </span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">dt</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/row.names.html">row.names</a></span><span class="op">(</span><span class="va">dt</span><span class="op">)</span></span>
-<span><span class="co"># acessamos data.frames da mesma forma que matrizes</span></span>
-<span><span class="va">dt</span><span class="op">[</span><span class="fl">5</span>,<span class="fl">2</span><span class="op">]</span>                       </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>number<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>letter<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">"x"</span>, <span class="st">"y"</span>, <span class="st">"z"</span>, <span class="st">"w"</span>, <span class="st">"j"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>logical<span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>seq<span class="ot">&lt;-</span><span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>dt<span class="ot">&lt;-</span><span class="fu">data.frame</span>(number, letter, logical)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(dt)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># usamos $ para acessar as colunas de um data.frame</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>dt<span class="sc">$</span>letter               </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># vetores de caracteres são interpretados como fatores</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(dt<span class="sc">$</span>letter)          </span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># argumento stringsAsFactors = F altera este comportamento padrão</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>dt<span class="ot">&lt;-</span><span class="fu">data.frame</span>(number, letter, logical, <span class="at">stringsAsFactors =</span> F) </span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>dt<span class="sc">$</span>letter</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(dt<span class="sc">$</span>letter)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># data.frames possuem colnames e rownames como atributos</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">attributes</span>(dt)                </span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(dt)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">row.names</span>(dt)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># acessamos data.frames da mesma forma que matrizes</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>dt[<span class="dv">5</span>,<span class="dv">2</span>]                       </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="trabalhando-com-data.frames" class="level3" data-number="5.0.1"><h3 data-number="5.0.1" class="anchored" data-anchor-id="trabalhando-com-data.frames">
-<span class="header-section-number">5.0.1</span> Trabalhando com data.frames</h3>
+<section id="trabalhando-com-data.frames" class="level3" data-number="5.0.1">
+<h3 data-number="5.0.1" class="anchored" data-anchor-id="trabalhando-com-data.frames"><span class="header-section-number">5.0.1</span> Trabalhando com data.frames</h3>
 <p>Para acessar data.frames podemos usar os operadores <code>[]</code>, <code>[[]]</code> e <code>$</code>:</p>
 <div class="cell">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">dt</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>number<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span>, <span class="fl">4</span>, <span class="fl">5</span><span class="op">)</span>,</span>
-<span>               letter <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"x"</span>, <span class="st">"y"</span>, <span class="st">"z"</span>, <span class="st">"w"</span>, <span class="st">"j"</span><span class="op">)</span>,</span>
-<span>               logical <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co"># [[ ]] acessa cada coluna por posição</span></span>
-<span><span class="va">dt</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span>              </span>
-<span><span class="co"># [ ] acessa as coordenadas [linha, coluna]</span></span>
-<span><span class="va">dt</span><span class="op">[</span>,<span class="fl">1</span><span class="op">]</span>               </span>
-<span><span class="co"># $ acessa a coluna pelo nome</span></span>
-<span><span class="va">dt</span><span class="op">$</span><span class="va">number</span>            </span>
-<span><span class="co"># carrega o data.frame mtcars</span></span>
-<span><span class="va">cars</span><span class="op">&lt;-</span><span class="va">mtcars</span>        </span>
-<span><span class="co"># mostra as 6 primeiras linhas</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">cars</span><span class="op">)</span>          </span>
-<span><span class="co"># mostra as 6 ultimas linhas</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">tail</a></span><span class="op">(</span><span class="va">cars</span><span class="op">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>dt<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">number=</span><span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>),</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>               <span class="at">letter =</span> <span class="fu">c</span>(<span class="st">"x"</span>, <span class="st">"y"</span>, <span class="st">"z"</span>, <span class="st">"w"</span>, <span class="st">"j"</span>),</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>               <span class="at">logical =</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>))</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># [[ ]] acessa cada coluna por posição</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>dt[[<span class="dv">1</span>]]              </span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># [ ] acessa as coordenadas [linha, coluna]</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>dt[,<span class="dv">1</span>]               </span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># $ acessa a coluna pelo nome</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>dt<span class="sc">$</span>number            </span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># carrega o data.frame mtcars</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>cars<span class="ot">&lt;-</span>mtcars        </span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co"># mostra as 6 primeiras linhas</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(cars)          </span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co"># mostra as 6 ultimas linhas</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="fu">tail</span>(cars)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-simple callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
@@ -272,43 +293,43 @@ Ex. 1: Criando um data.frame com carros com mais de 100hp
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">cars_100hp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">mtcars</span>, <span class="va">hp</span> <span class="op">&gt;</span> <span class="fl">100</span><span class="op">)</span></span>
-<span><span class="va">cars_100hp</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>cars_100hp <span class="ot">&lt;-</span> <span class="fu">subset</span>(mtcars, hp <span class="sc">&gt;</span> <span class="dv">100</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>cars_100hp</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># data.frames possuem colnames e rownames</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">dt</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/row.names.html">row.names</a></span><span class="op">(</span><span class="va">dt</span><span class="op">)</span></span>
-<span><span class="co"># podemos alterar colnames e rownames</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/row.names.html">row.names</a></span><span class="op">(</span><span class="va">dt</span><span class="op">)</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>, <span class="st">"d"</span>, <span class="st">"e"</span><span class="op">)</span></span>
-<span><span class="co"># alterando apenas a posição 2</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/colnames.html">colnames</a></span><span class="op">(</span><span class="va">dt</span><span class="op">)</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">&lt;-</span><span class="st">"letras"</span>     </span>
-<span><span class="co"># podemos alterar valores específicos de um data.frame</span></span>
-<span><span class="va">dt</span><span class="op">[</span><span class="fl">3</span>,<span class="fl">1</span><span class="op">]</span><span class="op">&lt;-</span><span class="st">"10"</span></span>
-<span><span class="va">dt</span><span class="op">$</span><span class="va">logical</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/numeric.html">as.numeric</a></span><span class="op">(</span><span class="va">dt</span><span class="op">$</span><span class="va">logical</span><span class="op">)</span></span>
-<span><span class="va">dt</span><span class="op">$</span><span class="va">letras</span><span class="op">&lt;-</span><span class="cn">NA</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># data.frames possuem colnames e rownames</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(dt)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">row.names</span>(dt)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># podemos alterar colnames e rownames</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">row.names</span>(dt)<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>, <span class="st">"d"</span>, <span class="st">"e"</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># alterando apenas a posição 2</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(dt)[<span class="dv">2</span>]<span class="ot">&lt;-</span><span class="st">"letras"</span>     </span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co"># podemos alterar valores específicos de um data.frame</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>dt[<span class="dv">3</span>,<span class="dv">1</span>]<span class="ot">&lt;-</span><span class="st">"10"</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>dt<span class="sc">$</span>logical<span class="ot">&lt;-</span><span class="fu">as.numeric</span>(dt<span class="sc">$</span>logical)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>dt<span class="sc">$</span>letras<span class="ot">&lt;-</span><span class="cn">NA</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>É possível verificar as ocorrencias de um data.frame em outro:</p>
 <div class="cell">
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">biometria</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>nomes<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Carlos"</span>, <span class="st">"Roberto"</span>, <span class="st">"Olivio"</span>, <span class="st">"Joel"</span><span class="op">)</span>,</span>
-<span>                      altura<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">180</span>, <span class="fl">187</span>, <span class="fl">155</span>, <span class="fl">168</span><span class="op">)</span>,</span>
-<span>                      peso<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">80</span>, <span class="fl">90</span>, <span class="fl">98</span>, <span class="fl">64</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="va">biometria</span></span>
-<span><span class="va">esportes</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>nomes<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Carlos"</span>, <span class="st">"Roberto"</span>, <span class="st">"Olivio"</span>, <span class="st">"Jomar"</span><span class="op">)</span>,</span>
-<span>                     esportes<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"futebol"</span>, <span class="st">"remo"</span>, <span class="st">"sumo"</span>, <span class="st">"maratona"</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="va">esportes</span></span>
-<span><span class="co"># retorna um vetor lógico</span></span>
-<span><span class="va">biometria</span><span class="op">$</span><span class="va">nomes</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="va">esportes</span><span class="op">$</span><span class="va">nomes</span></span>
-<span><span class="co"># pode ser usado como índice</span></span>
-<span><span class="va">idx</span><span class="op">&lt;-</span><span class="va">biometria</span><span class="op">$</span><span class="va">nomes</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="va">esportes</span><span class="op">$</span><span class="va">nomes</span>    </span>
-<span><span class="va">x</span><span class="op">&lt;-</span><span class="va">biometria</span><span class="op">[</span><span class="va">idx</span>,<span class="op">]</span></span>
-<span><span class="va">x</span></span>
-<span><span class="co"># ordenando data.frames por uma coluna</span></span>
-<span><span class="va">biometria</span><span class="op">&lt;-</span><span class="va">biometria</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/with.html">with</a></span><span class="op">(</span><span class="va">biometria</span>, <span class="fu"><a href="https://rdrr.io/r/base/order.html">order</a></span><span class="op">(</span><span class="va">altura</span><span class="op">)</span><span class="op">)</span>, <span class="op">]</span></span>
-<span><span class="va">biometria</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>biometria<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">nomes=</span><span class="fu">c</span>(<span class="st">"Carlos"</span>, <span class="st">"Roberto"</span>, <span class="st">"Olivio"</span>, <span class="st">"Joel"</span>),</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">altura=</span><span class="fu">c</span>(<span class="dv">180</span>, <span class="dv">187</span>, <span class="dv">155</span>, <span class="dv">168</span>),</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">peso=</span><span class="fu">c</span>(<span class="dv">80</span>, <span class="dv">90</span>, <span class="dv">98</span>, <span class="dv">64</span>))</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>biometria</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>esportes<span class="ot">&lt;-</span><span class="fu">data.frame</span>(<span class="at">nomes=</span><span class="fu">c</span>(<span class="st">"Carlos"</span>, <span class="st">"Roberto"</span>, <span class="st">"Olivio"</span>, <span class="st">"Jomar"</span>),</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>                     <span class="at">esportes=</span><span class="fu">c</span>(<span class="st">"futebol"</span>, <span class="st">"remo"</span>, <span class="st">"sumo"</span>, <span class="st">"maratona"</span>))</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>esportes</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co"># retorna um vetor lógico</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>biometria<span class="sc">$</span>nomes <span class="sc">%in%</span> esportes<span class="sc">$</span>nomes</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="co"># pode ser usado como índice</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>idx<span class="ot">&lt;-</span>biometria<span class="sc">$</span>nomes <span class="sc">%in%</span> esportes<span class="sc">$</span>nomes    </span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span>biometria[idx,]</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>x</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="co"># ordenando data.frames por uma coluna</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>biometria<span class="ot">&lt;-</span>biometria[<span class="fu">with</span>(biometria, <span class="fu">order</span>(altura)), ]</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>biometria</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-simple callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
@@ -323,13 +344,13 @@ Ex. 2: Ordenando o data.frame cars pela coluna “mpg” em ordem crescente
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">cars_sorted</span> <span class="op">&lt;-</span> <span class="va">cars</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/order.html">order</a></span><span class="op">(</span><span class="va">cars</span><span class="op">$</span><span class="va">mpg</span><span class="op">)</span>, <span class="op">]</span></span>
-<span><span class="va">cars_sorted</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>cars_sorted <span class="ot">&lt;-</span> cars[<span class="fu">order</span>(cars<span class="sc">$</span>mpg), ]</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>cars_sorted</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 </div>
-<p>Unindo data.frames com a função <code><a href="https://rdrr.io/r/base/merge.html">merge()</a></code>:</p>
+<p>Unindo data.frames com a função <code>merge()</code>:</p>
 <div class="callout callout-style-simple callout-important">
 <div class="callout-body d-flex">
 <div class="callout-icon-container">
@@ -341,21 +362,21 @@ Ex. 2: Ordenando o data.frame cars pela coluna “mpg” em ordem crescente
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">unido</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/merge.html">merge</a></span><span class="op">(</span><span class="va">biometria</span>, <span class="va">esportes</span>, by<span class="op">=</span><span class="st">"nomes"</span><span class="op">)</span></span>
-<span><span class="va">unido</span></span>
-<span><span class="co"># as informações não disponíveis são preenchidas por NA</span></span>
-<span><span class="co"># com todos os presentes no primeiro</span></span>
-<span><span class="va">unido</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/merge.html">merge</a></span><span class="op">(</span><span class="va">biometria</span>, <span class="va">esportes</span>, by<span class="op">=</span><span class="st">"nomes"</span>, all.x<span class="op">=</span><span class="cn">T</span><span class="op">)</span></span>
-<span><span class="va">unido</span></span>
-<span><span class="co"># com todos os presentes no segundo</span></span>
-<span><span class="va">unido</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/merge.html">merge</a></span><span class="op">(</span><span class="va">biometria</span>, <span class="va">esportes</span>, by<span class="op">=</span><span class="st">"nomes"</span>, all.y<span class="op">=</span><span class="cn">T</span><span class="op">)</span></span>
-<span><span class="va">unido</span></span>
-<span><span class="co"># com todos presentes</span></span>
-<span><span class="va">unido</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/merge.html">merge</a></span><span class="op">(</span><span class="va">biometria</span>, <span class="va">esportes</span>, by<span class="op">=</span><span class="st">"nomes"</span>, all<span class="op">=</span><span class="cn">T</span><span class="op">)</span></span>
-<span><span class="va">unido</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>unido<span class="ot">&lt;-</span><span class="fu">merge</span>(biometria, esportes, <span class="at">by=</span><span class="st">"nomes"</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>unido</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># as informações não disponíveis são preenchidas por NA</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># com todos os presentes no primeiro</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>unido<span class="ot">&lt;-</span><span class="fu">merge</span>(biometria, esportes, <span class="at">by=</span><span class="st">"nomes"</span>, <span class="at">all.x=</span>T)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>unido</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># com todos os presentes no segundo</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>unido<span class="ot">&lt;-</span><span class="fu">merge</span>(biometria, esportes, <span class="at">by=</span><span class="st">"nomes"</span>, <span class="at">all.y=</span>T)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>unido</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co"># com todos presentes</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>unido<span class="ot">&lt;-</span><span class="fu">merge</span>(biometria, esportes, <span class="at">by=</span><span class="st">"nomes"</span>, <span class="at">all=</span>T)</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>unido</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#load("Data/COGs.RData")</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#load("Data/COGs.RData")</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-simple callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
@@ -370,8 +391,8 @@ Ex. 3: Verificando se todos os “cog_id” do objeto cogids estão contidos no 
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">cogids_in_human</span> <span class="op">&lt;-</span> <span class="va">cogids</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="va">cog.human.data</span><span class="op">$</span><span class="va">cog_id</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/all.html">all</a></span><span class="op">(</span><span class="va">cogids_in_human</span><span class="op">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>cogids_in_human <span class="ot">&lt;-</span> cogids <span class="sc">%in%</span> cog.human.data<span class="sc">$</span>cog_id</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">all</span>(cogids_in_human)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -389,7 +410,7 @@ Ex. 4: Contando os tipos de OG no arquivo cog.human.data
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">cog.human.data</span><span class="op">$</span><span class="va">OG_type</span><span class="op">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(cog.human.data<span class="sc">$</span>OG_type)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -407,9 +428,9 @@ Ex. 5: Criando data.frames separados para cada tipo de OG
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">cog_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">cog.human.data</span>, <span class="va">OG_type</span> <span class="op">==</span> <span class="st">"COG"</span><span class="op">)</span></span>
-<span><span class="va">nog_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">cog.human.data</span>, <span class="va">OG_type</span> <span class="op">==</span> <span class="st">"NOG"</span><span class="op">)</span></span>
-<span><span class="va">kog_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/subset.html">subset</a></span><span class="op">(</span><span class="va">cog.human.data</span>, <span class="va">OG_type</span> <span class="op">==</span> <span class="st">"KOG"</span><span class="op">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>cog_data <span class="ot">&lt;-</span> <span class="fu">subset</span>(cog.human.data, OG_type <span class="sc">==</span> <span class="st">"COG"</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>nog_data <span class="ot">&lt;-</span> <span class="fu">subset</span>(cog.human.data, OG_type <span class="sc">==</span> <span class="st">"NOG"</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>kog_data <span class="ot">&lt;-</span> <span class="fu">subset</span>(cog.human.data, OG_type <span class="sc">==</span> <span class="st">"KOG"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -427,15 +448,16 @@ Ex. 6: Verificando qual dos três data.frames tem mais OG diferentes
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">cog_data</span><span class="op">$</span><span class="va">cog_id</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">nog_data</span><span class="op">$</span><span class="va">cog_id</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">kog_data</span><span class="op">$</span><span class="va">cog_id</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(<span class="fu">unique</span>(cog_data<span class="sc">$</span>cog_id))</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(<span class="fu">unique</span>(nog_data<span class="sc">$</span>cog_id))</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(<span class="fu">unique</span>(kog_data<span class="sc">$</span>cog_id))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 </div>
-</section><section id="desafio" class="level2" data-number="5.1"><h2 data-number="5.1" class="anchored" data-anchor-id="desafio">
-<span class="header-section-number">5.1</span> Desafio</h2>
+</section>
+<section id="desafio" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="desafio"><span class="header-section-number">5.1</span> Desafio</h2>
 <div class="callout callout-style-simple callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -455,18 +477,18 @@ Aprender com a prática fortalecerá seu raciocínio e aprofundará seu conhecim
 <li><strong>Crie os dataframes abaixo:</strong></li>
 </ol>
 <div class="cell">
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">peso</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="st">"Nome"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Bruno"</span>, <span class="st">"Dionisio"</span>,<span class="st">"Eduardo"</span>, <span class="st">"Ana"</span>, <span class="st">"Silvia"</span>, <span class="st">"Elizete"</span>, <span class="st">"Renata"</span>, <span class="st">"Arlete"</span>, <span class="st">"Lucas"</span><span class="op">)</span>,</span>
-<span>                   <span class="st">"Peso"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">73</span>, <span class="fl">68</span>, <span class="fl">65</span>, <span class="fl">73</span>, <span class="fl">60</span>, <span class="fl">65</span>, <span class="fl">70</span>, <span class="fl">83</span>, <span class="fl">68</span><span class="op">)</span>, stringsAsFactors <span class="op">=</span> <span class="cn">F</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">altura</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="st">"Nome"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Davi"</span>, <span class="st">"Kevin"</span>,<span class="st">"Eduardo"</span>,<span class="st">"Lucas"</span>, <span class="st">"Antonio"</span>, <span class="st">"Moises"</span>, <span class="st">"Dionisio"</span>, <span class="st">"Ana"</span>, <span class="st">"Renata"</span><span class="op">)</span>,</span>
-<span>                     <span class="st">"Altura"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">150</span>, <span class="fl">193</span>, <span class="fl">152</span>, <span class="fl">175</span>, <span class="fl">191</span>, <span class="fl">173</span>, <span class="fl">180</span>, <span class="fl">163</span>, <span class="fl">178</span><span class="op">)</span>, stringsAsFactors <span class="op">=</span> <span class="cn">F</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">idade</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="st">"Nome"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Eloise"</span>, <span class="st">"Ana"</span>,<span class="st">"Flavia"</span>,<span class="st">"Dayse"</span>, <span class="st">"Eduardo"</span>, <span class="st">"Silvia"</span>, <span class="st">"Dionisio"</span>, <span class="st">"Renata"</span>, <span class="st">"Bruno"</span><span class="op">)</span>,</span>
-<span>                    <span class="st">"Idade"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">24</span>, <span class="fl">27</span>, <span class="fl">30</span>, <span class="fl">21</span>, <span class="fl">37</span>, <span class="fl">18</span>, <span class="fl">43</span>, <span class="fl">26</span>, <span class="fl">47</span><span class="op">)</span>, stringsAsFactors <span class="op">=</span> <span class="cn">F</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">profissao</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="st">"Nome"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Dionisio"</span>, <span class="st">"Renata"</span>,<span class="st">"Ana"</span>,<span class="st">"Flavia"</span>, <span class="st">"Thais"</span>, <span class="st">"Daniel"</span>, <span class="st">"Fernanda"</span>, <span class="st">"Bárbara"</span>, <span class="st">"Henrique"</span><span class="op">)</span>,</span>
-<span>                        <span class="st">"Profissao"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Programador"</span>, <span class="st">"Pesquisadora"</span>, <span class="st">"Advogada"</span>, <span class="st">"Farmaceutica"</span>, <span class="st">"Bombeira Civil"</span>, <span class="st">"Cabelereiro"</span>,</span>
-<span>                                        <span class="st">"Cozinheira"</span>, <span class="st">"Estiliesta"</span>, <span class="st">"Professor"</span><span class="op">)</span>, stringsAsFactors <span class="op">=</span> <span class="cn">F</span><span class="op">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>peso <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="st">"Nome"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Bruno"</span>, <span class="st">"Dionisio"</span>,<span class="st">"Eduardo"</span>, <span class="st">"Ana"</span>, <span class="st">"Silvia"</span>, <span class="st">"Elizete"</span>, <span class="st">"Renata"</span>, <span class="st">"Arlete"</span>, <span class="st">"Lucas"</span>),</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"Peso"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">73</span>, <span class="dv">68</span>, <span class="dv">65</span>, <span class="dv">73</span>, <span class="dv">60</span>, <span class="dv">65</span>, <span class="dv">70</span>, <span class="dv">83</span>, <span class="dv">68</span>), <span class="at">stringsAsFactors =</span> F)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>altura <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="st">"Nome"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Davi"</span>, <span class="st">"Kevin"</span>,<span class="st">"Eduardo"</span>,<span class="st">"Lucas"</span>, <span class="st">"Antonio"</span>, <span class="st">"Moises"</span>, <span class="st">"Dionisio"</span>, <span class="st">"Ana"</span>, <span class="st">"Renata"</span>),</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"Altura"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">150</span>, <span class="dv">193</span>, <span class="dv">152</span>, <span class="dv">175</span>, <span class="dv">191</span>, <span class="dv">173</span>, <span class="dv">180</span>, <span class="dv">163</span>, <span class="dv">178</span>), <span class="at">stringsAsFactors =</span> F)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>idade <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="st">"Nome"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Eloise"</span>, <span class="st">"Ana"</span>,<span class="st">"Flavia"</span>,<span class="st">"Dayse"</span>, <span class="st">"Eduardo"</span>, <span class="st">"Silvia"</span>, <span class="st">"Dionisio"</span>, <span class="st">"Renata"</span>, <span class="st">"Bruno"</span>),</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"Idade"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">24</span>, <span class="dv">27</span>, <span class="dv">30</span>, <span class="dv">21</span>, <span class="dv">37</span>, <span class="dv">18</span>, <span class="dv">43</span>, <span class="dv">26</span>, <span class="dv">47</span>), <span class="at">stringsAsFactors =</span> F)</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>profissao <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="st">"Nome"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Dionisio"</span>, <span class="st">"Renata"</span>,<span class="st">"Ana"</span>,<span class="st">"Flavia"</span>, <span class="st">"Thais"</span>, <span class="st">"Daniel"</span>, <span class="st">"Fernanda"</span>, <span class="st">"Bárbara"</span>, <span class="st">"Henrique"</span>),</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"Profissao"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Programador"</span>, <span class="st">"Pesquisadora"</span>, <span class="st">"Advogada"</span>, <span class="st">"Farmaceutica"</span>, <span class="st">"Bombeira Civil"</span>, <span class="st">"Cabelereiro"</span>,</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>                                        <span class="st">"Cozinheira"</span>, <span class="st">"Estiliesta"</span>, <span class="st">"Professor"</span>), <span class="at">stringsAsFactors =</span> F)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol type="a">
 <li><p>No dataframe peso, verifique quantos valores iguais de peso existem.</p></li>
@@ -481,17 +503,17 @@ Aprender com a prática fortalecerá seu raciocínio e aprofundará seu conhecim
 <li><strong>Com os seguintes dataframes, responda:</strong></li>
 </ol>
 <div class="cell">
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">amostra1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="st">"genero"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Prevotella"</span>, <span class="st">"Prevotella"</span>, <span class="st">"Prevotella"</span>, <span class="st">"Streptococcus"</span>,<span class="st">"Neisseria"</span>, <span class="st">"Neisseria"</span>, </span>
-<span>                                    <span class="st">"Lactobacillus"</span>, <span class="st">"Bacteroides"</span>, <span class="st">"Anaerosporomusa"</span><span class="op">)</span>,</span>
-<span>                       <span class="st">"especie"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Prevotella_copri"</span>, <span class="st">"Prevotella_denticola"</span>, <span class="st">"Prevotella_ruminicola"</span>, <span class="st">"Streptococcus_infantarius"</span>, </span>
-<span>                                     <span class="st">"Neisseria_gonorrhoeae"</span>, <span class="st">"Neisseria_meningitidis"</span>, <span class="st">"Lactobacillus_iners"</span>, <span class="st">"Bacteroides_xylanisolvens"</span>,</span>
-<span>                                     <span class="st">"Anaerosporomusa_subterranea"</span><span class="op">)</span>, stringsAsFactors <span class="op">=</span> <span class="cn">F</span><span class="op">)</span></span>
-<span></span>
-<span><span class="va">amostra2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="st">"genero"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Prevotella"</span>, <span class="st">"Prevotella"</span>, <span class="st">"Streptococcus"</span>, <span class="st">"Streptococcus"</span>, <span class="st">"Neisseria"</span>, <span class="st">"Neisseria"</span>, <span class="st">"Bacteroides"</span>, </span>
-<span>                                    <span class="st">"Fusobacterium"</span>, <span class="st">"Pseudoalteromonas"</span>, <span class="st">"Achromobacter"</span>, <span class="st">"Aggregatibacte"</span><span class="op">)</span>,</span>
-<span>                       <span class="st">"especie"</span> <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Prevotella_denticola"</span>, <span class="st">"Prevotella_ruminicola"</span>, <span class="st">"Streptococcus_infantarius"</span>, <span class="st">"Streptococcus_equi"</span>, </span>
-<span>                                     <span class="st">"Neisseria_gonorrhoeae"</span>, <span class="st">"Neisseria_meningitidis"</span>, <span class="st">"Bacteroides_xylanisolvens"</span>, <span class="st">"Fusobacterium_nucleatum"</span>, </span>
-<span>                                     <span class="st">"Pseudoalteromonas_sp._S558"</span>, <span class="st">"Achromobacter_sp._KAs_3-5"</span>, <span class="st">"Aggregatibacter_actinomycetemcomitans"</span><span class="op">)</span>, stringsAsFactors <span class="op">=</span> <span class="cn">F</span><span class="op">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>amostra1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="st">"genero"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Prevotella"</span>, <span class="st">"Prevotella"</span>, <span class="st">"Prevotella"</span>, <span class="st">"Streptococcus"</span>,<span class="st">"Neisseria"</span>, <span class="st">"Neisseria"</span>, </span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">"Lactobacillus"</span>, <span class="st">"Bacteroides"</span>, <span class="st">"Anaerosporomusa"</span>),</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"especie"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Prevotella_copri"</span>, <span class="st">"Prevotella_denticola"</span>, <span class="st">"Prevotella_ruminicola"</span>, <span class="st">"Streptococcus_infantarius"</span>, </span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>                                     <span class="st">"Neisseria_gonorrhoeae"</span>, <span class="st">"Neisseria_meningitidis"</span>, <span class="st">"Lactobacillus_iners"</span>, <span class="st">"Bacteroides_xylanisolvens"</span>,</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>                                     <span class="st">"Anaerosporomusa_subterranea"</span>), <span class="at">stringsAsFactors =</span> F)</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>amostra2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="st">"genero"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Prevotella"</span>, <span class="st">"Prevotella"</span>, <span class="st">"Streptococcus"</span>, <span class="st">"Streptococcus"</span>, <span class="st">"Neisseria"</span>, <span class="st">"Neisseria"</span>, <span class="st">"Bacteroides"</span>, </span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">"Fusobacterium"</span>, <span class="st">"Pseudoalteromonas"</span>, <span class="st">"Achromobacter"</span>, <span class="st">"Aggregatibacte"</span>),</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>                       <span class="st">"especie"</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Prevotella_denticola"</span>, <span class="st">"Prevotella_ruminicola"</span>, <span class="st">"Streptococcus_infantarius"</span>, <span class="st">"Streptococcus_equi"</span>, </span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>                                     <span class="st">"Neisseria_gonorrhoeae"</span>, <span class="st">"Neisseria_meningitidis"</span>, <span class="st">"Bacteroides_xylanisolvens"</span>, <span class="st">"Fusobacterium_nucleatum"</span>, </span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>                                     <span class="st">"Pseudoalteromonas_sp._S558"</span>, <span class="st">"Achromobacter_sp._KAs_3-5"</span>, <span class="st">"Aggregatibacter_actinomycetemcomitans"</span>), <span class="at">stringsAsFactors =</span> F)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol type="a">
 <li><p>Quantas espécies da amostra 1 também estão presentes na amostra 2?</p></li>
@@ -502,7 +524,7 @@ Aprender com a prática fortalecerá seu raciocínio e aprofundará seu conhecim
 <li><strong>Considere o dataframe abaixo:</strong></li>
 </ol>
 <div class="cell">
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>col1 <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">3</span>, col2 <span class="op">=</span> <span class="fl">2</span><span class="op">:</span><span class="fl">4</span>, col3 <span class="op">=</span> <span class="fl">3</span><span class="op">:</span><span class="fl">5</span><span class="op">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">col1 =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">col2 =</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">col3 =</span> <span class="dv">3</span><span class="sc">:</span><span class="dv">5</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Faça a seleção dos elementos do dataframe utilizando duas abordagens diferentes: a abordagem utilizada na indexação de matrizes e a abordagem para indexação de listas.</p>
 <ol type="a">
@@ -511,7 +533,10 @@ Aprender com a prática fortalecerá seu raciocínio e aprofundará seu conhecim
 </ol>
 
 
-</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -690,18 +715,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -733,7 +747,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/dalmolingroup\.github\.io\/introductionR-course\/");
@@ -741,7 +775,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -838,7 +872,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -1063,7 +1096,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
       <a href="../content/04_matrix_lists_arrays.html" class="pagination-link" aria-label="Matrizes">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Matrizes</span></span>
       </a>          
@@ -1075,7 +1110,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer">
+<footer class="footer">
+  <div class="nav-footer">
     <div class="nav-footer-left">
       &nbsp;
     </div>   
@@ -1087,6 +1123,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+
+
 
 
 </body></html>

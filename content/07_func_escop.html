@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR" xml:lang="pt-BR"><head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.553">
+<meta name="generator" content="quarto-1.6.42">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Curso de Introdução ao R - 7&nbsp; Definindo funções em R</title>
+
+
+<title>7&nbsp; Definindo funções em R – Curso de Introdução ao R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -53,6 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
+
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
@@ -67,12 +71,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-de84f8d6bb715db06a919283c2d1e787.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-9a023c9ade86a60361e96e3e3f11bc54.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark"><script id="quarto-search-options" type="application/json">{
+<link href="../site_libs/bootstrap/bootstrap-8b3ea0116ff0d93d4ffd0e90a97ee776.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-162fe357cf1f427b4ce1edfda09a2b40.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
@@ -99,24 +104,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Procurar"
   }
 }</script>
+
+
 </head>
+
 <body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav"><div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../content/07_func_escop.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Definindo funções em R</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Procurar" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
-  </nav></header><!-- content --><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto"><div class="pt-lg-2 mt-2 text-left sidebar-header">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Curso de Introdução ao R</a> 
         <div class="sidebar-tools-main tools-wide">
@@ -137,7 +151,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-<li class="sidebar-item">
+        <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Curso de Introdução ao R</span></a>
@@ -186,31 +200,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
 </li>
     </ul>
-</div>
-</nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Índice</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Índice</h2>
    
   <ul>
-<li><a href="#aspectos-gerais-das-fun%C3%A7%C3%B5es-em-r" id="toc-aspectos-gerais-das-funções-em-r" class="nav-link active" data-scroll-target="#aspectos-gerais-das-fun%C3%A7%C3%B5es-em-r"><span class="header-section-number">7.1</span> Aspectos gerais das funções em R</a></li>
-  <li><a href="#fazendo-a-correspond%C3%AAncia-dos-argumentos-nas-fun%C3%A7%C3%B5es" id="toc-fazendo-a-correspondência-dos-argumentos-nas-funções" class="nav-link" data-scroll-target="#fazendo-a-correspond%C3%AAncia-dos-argumentos-nas-fun%C3%A7%C3%B5es"><span class="header-section-number">7.2</span> Fazendo a correspondência dos argumentos nas funções</a></li>
-  <li>
-<a href="#anatomia-das-fun%C3%A7%C3%B5es-em-r" id="toc-anatomia-das-funções-em-r" class="nav-link" data-scroll-target="#anatomia-das-fun%C3%A7%C3%B5es-em-r"><span class="header-section-number">7.3</span> Anatomia das funções em R</a>
+  <li><a href="#aspectos-gerais-das-funções-em-r" id="toc-aspectos-gerais-das-funções-em-r" class="nav-link active" data-scroll-target="#aspectos-gerais-das-funções-em-r"><span class="header-section-number">7.1</span> Aspectos gerais das funções em R</a></li>
+  <li><a href="#fazendo-a-correspondência-dos-argumentos-nas-funções" id="toc-fazendo-a-correspondência-dos-argumentos-nas-funções" class="nav-link" data-scroll-target="#fazendo-a-correspondência-dos-argumentos-nas-funções"><span class="header-section-number">7.2</span> Fazendo a correspondência dos argumentos nas funções</a></li>
+  <li><a href="#anatomia-das-funções-em-r" id="toc-anatomia-das-funções-em-r" class="nav-link" data-scroll-target="#anatomia-das-funções-em-r"><span class="header-section-number">7.3</span> Anatomia das funções em R</a>
   <ul class="collapse">
-<li><a href="#definindo-fun%C3%A7%C3%B5es" id="toc-definindo-funções" class="nav-link" data-scroll-target="#definindo-fun%C3%A7%C3%B5es"><span class="header-section-number">7.3.1</span> Definindo funções</a></li>
-  </ul>
-</li>
-  <li><a href="#ambientes-e-escopo-das-fun%C3%A7%C3%B5es" id="toc-ambientes-e-escopo-das-funções" class="nav-link" data-scroll-target="#ambientes-e-escopo-das-fun%C3%A7%C3%B5es"><span class="header-section-number">7.4</span> Ambientes e escopo das funções</a></li>
+  <li><a href="#definindo-funções" id="toc-definindo-funções" class="nav-link" data-scroll-target="#definindo-funções"><span class="header-section-number">7.3.1</span> Definindo funções</a></li>
+  </ul></li>
+  <li><a href="#ambientes-e-escopo-das-funções" id="toc-ambientes-e-escopo-das-funções" class="nav-link" data-scroll-target="#ambientes-e-escopo-das-funções"><span class="header-section-number">7.4</span> Ambientes e escopo das funções</a></li>
   <li><a href="#outros-exemplos" id="toc-outros-exemplos" class="nav-link" data-scroll-target="#outros-exemplos"><span class="header-section-number">7.5</span> Outros exemplos</a></li>
   <li><a href="#desafio" id="toc-desafio" class="nav-link" data-scroll-target="#desafio"><span class="header-section-number">7.6</span> Desafio</a></li>
-  </ul></nav>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
-<h1 class="title">
-<span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Definindo funções em R</span>
-</h1>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Definindo funções em R</span></h1>
 </div>
 
 
@@ -224,186 +240,195 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><p>A capacidade de escrever funções otimiza a execução de tarefas repetitivas e torna o usuário um desenvolvedor de conteúdo.</p>
-<section id="aspectos-gerais-das-funções-em-r" class="level2" data-number="7.1"><h2 data-number="7.1" class="anchored" data-anchor-id="aspectos-gerais-das-funções-em-r">
-<span class="header-section-number">7.1</span> Aspectos gerais das funções em R</h2>
-<p>Uma função é um objeto capaz de realizar uma ação. Por exemplo, a função <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> obtém a média de um vetor numérico e a função <code><a href="https://rdrr.io/r/base/MathFun.html">sqrt()</a></code> realiza o cálculo da raiz quadrada de cada elemento de um vetor numérico.</p>
+</header>
+
+
+<p>A capacidade de escrever funções otimiza a execução de tarefas repetitivas e torna o usuário um desenvolvedor de conteúdo.</p>
+<section id="aspectos-gerais-das-funções-em-r" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="aspectos-gerais-das-funções-em-r"><span class="header-section-number">7.1</span> Aspectos gerais das funções em R</h2>
+<p>Uma função é um objeto capaz de realizar uma ação. Por exemplo, a função <code>mean()</code> obtém a média de um vetor numérico e a função <code>sqrt()</code> realiza o cálculo da raiz quadrada de cada elemento de um vetor numérico.</p>
 <ul>
 <li>Funções podem ser usadas de forma encadeada. O resultado de uma função é usado pela função mais externa:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># O resultado da função unique() é usado pela função length()</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/unique.html">unique</a></span><span class="op">(</span><span class="va">mtcars</span><span class="op">$</span><span class="va">cyl</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># O resultado da função unique() é usado pela função length()</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(<span class="fu">unique</span>(mtcars<span class="sc">$</span>cyl))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="fazendo-a-correspondência-dos-argumentos-nas-funções" class="level2" data-number="7.2"><h2 data-number="7.2" class="anchored" data-anchor-id="fazendo-a-correspondência-dos-argumentos-nas-funções">
-<span class="header-section-number">7.2</span> Fazendo a correspondência dos argumentos nas funções</h2>
-<p>A correspondência dos argumentos de uma função pode ser feita por meio do <strong>nome do argumento</strong> ou por meio da <strong>posição</strong>. Vamos tomar como exemplo a função <code><a href="https://rdrr.io/r/stats/Normal.html">rnorm()</a></code>, que gera um vetor de <em>n</em> elementos que possui valores que obedecem à distribuição normal.</p>
+</section>
+<section id="fazendo-a-correspondência-dos-argumentos-nas-funções" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="fazendo-a-correspondência-dos-argumentos-nas-funções"><span class="header-section-number">7.2</span> Fazendo a correspondência dos argumentos nas funções</h2>
+<p>A correspondência dos argumentos de uma função pode ser feita por meio do <strong>nome do argumento</strong> ou por meio da <strong>posição</strong>. Vamos tomar como exemplo a função <code>rnorm()</code>, que gera um vetor de <em>n</em> elementos que possui valores que obedecem à distribuição normal.</p>
 <p>A função possui 3 argumentos: <code>n</code> (tamanho do vetor a ser criado), <code>mean</code> (média da distribuição) e <code>sd</code> (desvio padrão da distribuição), nesta ordem. Se os nome dos argumentos não forem definidos na chamada da função, ela assumirá que o primeiro argumento corresponde ao <em>n</em>, o segundo ao <em>mean</em> e o terceiro ao <em>sd</em>.</p>
 <p>Vamos criar um vetor de 100 elementos com média 1 e desvio padrão 2.</p>
 <div class="cell">
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Argumentos da função rnorm</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/args.html">args</a></span><span class="op">(</span><span class="va">rnorm</span><span class="op">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Argumentos da função rnorm</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">args</span>(rnorm)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Fazendo a correspondência pela posição dos argumentos </span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="fl">100</span>, <span class="fl">1</span>, <span class="fl">2</span><span class="op">)</span> </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fazendo a correspondência pela posição dos argumentos </span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="dv">100</span>, <span class="dv">1</span>, <span class="dv">2</span>) </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Fazendo a correspondência pelo nome dos argumentos</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span>mean <span class="op">=</span> <span class="fl">1</span>, n <span class="op">=</span> <span class="fl">100</span>, sd <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fazendo a correspondência pelo nome dos argumentos</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="at">mean =</span> <span class="dv">1</span>, <span class="at">n =</span> <span class="dv">100</span>, <span class="at">sd =</span> <span class="dv">2</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Ambas as utilizações irão gerar e mesmo resultado.</p>
-<p>Observe, ainda, que as funções podem apresentar argumentos que já possuem uma valor pré-definido. Na função <code><a href="https://rdrr.io/r/stats/Normal.html">rnorm()</a></code>, os argumentos <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> e <code><a href="https://rdrr.io/r/stats/sd.html">sd()</a></code> possuem valores pré-definidos.</p>
+<p>Observe, ainda, que as funções podem apresentar argumentos que já possuem uma valor pré-definido. Na função <code>rnorm()</code>, os argumentos <code>mean()</code> e <code>sd()</code> possuem valores pré-definidos.</p>
 <div class="cell">
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># A função irá executar mesmo sem o fornecimento dos outros argumentos.</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span>n <span class="op">=</span> <span class="fl">100</span><span class="op">)</span> </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A função irá executar mesmo sem o fornecimento dos outros argumentos.</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">100</span>) </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Entretanto, observe que o argumento <code>n</code> não possui valor pré-definido. A ausência deste argumento impossibilita a execução da função.</p>
 <div class="cell">
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rnorm</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="anatomia-das-funções-em-r" class="level2" data-number="7.3"><h2 data-number="7.3" class="anchored" data-anchor-id="anatomia-das-funções-em-r">
-<span class="header-section-number">7.3</span> Anatomia das funções em R</h2>
+</section>
+<section id="anatomia-das-funções-em-r" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="anatomia-das-funções-em-r"><span class="header-section-number">7.3</span> Anatomia das funções em R</h2>
 <p>As funções possuem três elementos primordiais:</p>
 <ul>
 <li>Argumentos: parâmetros que possibilitam a execução da ação. Ao definir a função, os argumentos podem assumir qualquer nome;</li>
 <li>Corpo: sequência de passos para resultar no objetivo da função;</li>
 <li>Ambiente: quando uma função é definida, ela cria um ambiente pŕoprio, onde as variáveis criadas dentro dela possuem valores próprios.</li>
 </ul>
-<section id="definindo-funções" class="level3" data-number="7.3.1"><h3 data-number="7.3.1" class="anchored" data-anchor-id="definindo-funções">
-<span class="header-section-number">7.3.1</span> Definindo funções</h3>
+<section id="definindo-funções" class="level3" data-number="7.3.1">
+<h3 data-number="7.3.1" class="anchored" data-anchor-id="definindo-funções"><span class="header-section-number">7.3.1</span> Definindo funções</h3>
 <p>Algumas propriedades das funções:</p>
 <ul>
 <li>A função <code>function()</code> cria funções definidas pelo próprio usuário:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">my_fun</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">arg1</span>, <span class="va">arg2</span><span class="op">)</span> <span class="op">{</span> <span class="co"># Argumentos</span></span>
-<span>    <span class="co"># Corpo da função</span></span>
-<span><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>my_fun <span class="ot">&lt;-</span> <span class="cf">function</span>(arg1, arg2) { <span class="co"># Argumentos</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Corpo da função</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>As funções podem ter uma quantidade indeterminada de argumentos e, inclusive, não apresentar argumentos:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Imprime 12. Não possui argumentos.</span></span>
-<span><span class="va">f</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span> </span>
-<span>      <span class="fl">12</span></span>
-<span><span class="op">}</span></span>
-<span><span class="fu">f</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Imprime 12. Não possui argumentos.</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="cf">function</span>() { </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>      <span class="dv">12</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">f</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Simplesmente imprime "BU!" com qualquer argumento.</span></span>
-<span><span class="va">f1</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span> </span>
-<span>      <span class="st">"BU!"</span></span>
-<span><span class="op">}</span></span>
-<span><span class="fu">f1</span><span class="op">(</span><span class="op">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Simplesmente imprime "BU!" com qualquer argumento.</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>f1 <span class="ot">&lt;-</span> <span class="cf">function</span>(x) { </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>      <span class="st">"BU!"</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">f1</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>Os argumentos das funções podem apresentar um valor pré-definido:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># y possui um valor pré-definido</span></span>
-<span><span class="va">f2</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span> <span class="op">=</span> <span class="fl">10</span><span class="op">)</span> <span class="op">{</span> </span>
-<span>      <span class="va">x</span> <span class="op">+</span> <span class="va">y</span></span>
-<span><span class="op">}</span></span>
-<span><span class="fu">f2</span><span class="op">(</span><span class="fl">2</span><span class="op">)</span></span>
-<span><span class="fu">f2</span><span class="op">(</span><span class="fl">2</span>, <span class="fl">4</span><span class="op">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># y possui um valor pré-definido</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>f2 <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">y =</span> <span class="dv">10</span>) { </span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>      x <span class="sc">+</span> y</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="fu">f2</span>(<span class="dv">2</span>)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="fu">f2</span>(<span class="dv">2</span>, <span class="dv">4</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
-<li>Quando definimos um objeto dentro de uma função e este representa o resultado final da função, é necessário retornar seu valor. Para isso, podemos usar a função <code><a href="https://rdrr.io/r/base/function.html">return()</a></code> ou <code><a href="https://rdrr.io/r/base/print.html">print()</a></code>:</li>
+<li>Quando definimos um objeto dentro de uma função e este representa o resultado final da função, é necessário retornar seu valor. Para isso, podemos usar a função <code>return()</code> ou <code>print()</code>:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Imprimir o resultado calculado</span></span>
-<span><span class="va">f3</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">a</span>, <span class="va">b</span><span class="op">)</span> <span class="op">{</span></span>
-<span>      <span class="va">res</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="op">)</span></span>
-<span>      <span class="va">res</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="va">a</span><span class="op">^</span><span class="fl">2</span></span>
-<span>      <span class="va">res</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="va">b</span> <span class="op">+</span> <span class="fl">1</span></span>
-<span>      <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">res</span><span class="op">)</span> </span>
-<span><span class="op">}</span></span>
-<span><span class="fu">f3</span><span class="op">(</span><span class="fl">2</span>, <span class="fl">4</span><span class="op">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Imprimir o resultado calculado</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>f3 <span class="ot">&lt;-</span> <span class="cf">function</span>(a, b) {</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>      res <span class="ot">&lt;-</span> <span class="fu">c</span>()</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>      res[<span class="dv">1</span>] <span class="ot">&lt;-</span> a<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>      res[<span class="dv">2</span>] <span class="ot">&lt;-</span> b <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>      <span class="fu">print</span>(res) </span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="fu">f3</span>(<span class="dv">2</span>, <span class="dv">4</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>Funcões podem existir dentro de outras funções:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">make.power</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">n</span><span class="op">)</span> <span class="op">{</span></span>
-<span>      <span class="va">pow</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">{</span></span>
-<span>            <span class="va">x</span><span class="op">^</span><span class="va">n</span></span>
-<span>      <span class="op">}</span></span>
-<span>      <span class="va">pow</span></span>
-<span><span class="op">}</span></span>
-<span></span>
-<span><span class="va">cube</span> <span class="op">&lt;-</span> <span class="fu">make.power</span><span class="op">(</span><span class="fl">3</span><span class="op">)</span></span>
-<span><span class="va">square</span> <span class="op">&lt;-</span> <span class="fu">make.power</span><span class="op">(</span><span class="fl">2</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu">cube</span><span class="op">(</span><span class="fl">3</span><span class="op">)</span></span>
-<span><span class="fu">square</span><span class="op">(</span><span class="fl">2</span><span class="op">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>make.power <span class="ot">&lt;-</span> <span class="cf">function</span>(n) {</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>      pow <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>            x<span class="sc">^</span>n</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>      pow</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>cube <span class="ot">&lt;-</span> <span class="fu">make.power</span>(<span class="dv">3</span>)</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>square <span class="ot">&lt;-</span> <span class="fu">make.power</span>(<span class="dv">2</span>)</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="fu">cube</span>(<span class="dv">3</span>)</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="fu">square</span>(<span class="dv">2</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section></section><section id="ambientes-e-escopo-das-funções" class="level2" data-number="7.4"><h2 data-number="7.4" class="anchored" data-anchor-id="ambientes-e-escopo-das-funções">
-<span class="header-section-number">7.4</span> Ambientes e escopo das funções</h2>
+</section>
+</section>
+<section id="ambientes-e-escopo-das-funções" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="ambientes-e-escopo-das-funções"><span class="header-section-number">7.4</span> Ambientes e escopo das funções</h2>
 <p>Antes de qualquer coisa, precisamos entender o conceito de variáveis livres. As variáveis livres são variáveis que não são argumentos das funções e nem foram definidas dentro da função (no escopo da função). As regras de escopo definem como o R irá tentar buscar o valor correspondente a essa variável livre. Por exemplo:</p>
 <div class="cell">
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">fun</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span> <span class="op">{</span></span>
-<span>    <span class="va">x</span> <span class="op">+</span> <span class="va">y</span> <span class="op">+</span> <span class="va">z</span></span>
-<span><span class="op">}</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>fun <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) {</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    x <span class="sc">+</span> y <span class="sc">+</span> z</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>A função acima possui a variável <em>z</em>, porém ela não foi definida nem como argumento nem no escopo da função.</p>
 <p>Ambientes correspondem a um conceito abstrato para definir um conjunto de objetos. O ambiente mais usado interativamente pelo usuário é o <em>Global Environment</em> ou ambiente global, que guarda as objetos e funções que construímos em uma sessão do R. Quando estamos trabalhando no console e queremos obter o valor de um objeto, o R irá procurar pelo objeto primeiramente no ambiente global e, se não encontrar, irá procurar nos outros ambientes.</p>
-<p>Para se ter uma ideia de quantos e quais os ambientes podem existir, podemos usar a função <code><a href="https://rdrr.io/r/base/search.html">search()</a></code>.</p>
+<p>Para se ter uma ideia de quantos e quais os ambientes podem existir, podemos usar a função <code>search()</code>.</p>
 <div class="cell">
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/search.html">search</a></span><span class="op">(</span><span class="op">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">search</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Tendo em vista a ideia de ambiente, consideremos a função <code>fun()</code> definida anteriormente. O valor da variável <em>z</em> é buscado inicialmente no escopo da função, em seguida no ambiente global e, se não encontrado, é buscado nos outros ambientes. Se, após o término da busca, o valor desta variável não for encontrado, a função retornará um erro:</p>
 <div class="cell">
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">fun</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span> <span class="op">{</span></span>
-<span>    <span class="va">x</span> <span class="op">+</span> <span class="va">y</span> <span class="op">+</span> <span class="va">z</span></span>
-<span><span class="op">}</span></span>
-<span><span class="fu">fun</span><span class="op">(</span><span class="fl">1</span>, <span class="fl">3</span><span class="op">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>fun <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) {</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>    x <span class="sc">+</span> y <span class="sc">+</span> z</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">fun</span>(<span class="dv">1</span>, <span class="dv">3</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Mais exemplos:</p>
 <div class="cell">
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">f4</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span> <span class="op">{</span>              </span>
-<span>      <span class="va">x</span><span class="op">^</span><span class="fl">2</span> <span class="op">+</span> <span class="va">y</span><span class="op">/</span><span class="va">z</span></span>
-<span><span class="op">}</span></span>
-<span><span class="fu">f4</span><span class="op">(</span><span class="fl">2</span>, <span class="fl">4</span><span class="op">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>f4 <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) {              </span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>      x<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> y<span class="sc">/</span>z</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="fu">f4</span>(<span class="dv">2</span>, <span class="dv">4</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>No caso a seguir, o valor da variável <em>z</em> é definido no ambiente global e possibilita a execução da função.</p>
 <div class="cell">
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">z</span> <span class="op">&lt;-</span> <span class="fl">3</span></span>
-<span><span class="va">f4</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span> <span class="op">{</span>              </span>
-<span>      <span class="va">x</span><span class="op">^</span><span class="fl">2</span> <span class="op">+</span> <span class="va">y</span><span class="op">/</span><span class="va">z</span></span>
-<span><span class="op">}</span></span>
-<span><span class="fu">f4</span><span class="op">(</span><span class="fl">2</span>, <span class="fl">4</span><span class="op">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>f4 <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) {              </span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>      x<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> y<span class="sc">/</span>z</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="fu">f4</span>(<span class="dv">2</span>, <span class="dv">4</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="outros-exemplos" class="level2" data-number="7.5"><h2 data-number="7.5" class="anchored" data-anchor-id="outros-exemplos">
-<span class="header-section-number">7.5</span> Outros exemplos</h2>
+</section>
+<section id="outros-exemplos" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="outros-exemplos"><span class="header-section-number">7.5</span> Outros exemplos</h2>
 <p>Criando uma função para adicionar dois números:</p>
 <div class="cell">
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># x e y são os argumentos da função definida</span></span>
-<span><span class="co"># O que a função faz: adiciona dois números</span></span>
-<span><span class="va">add_num</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span> <span class="op">{</span></span>
-<span>    <span class="va">x</span> <span class="op">+</span> <span class="va">y</span> </span>
-<span><span class="op">}</span></span>
-<span><span class="fu">add_num</span><span class="op">(</span>x <span class="op">=</span> <span class="fl">2</span>, y <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># x e y são os argumentos da função definida</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co"># O que a função faz: adiciona dois números</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>add_num <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) {</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    x <span class="sc">+</span> y </span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="fu">add_num</span>(<span class="at">x =</span> <span class="dv">2</span>, <span class="at">y =</span> <span class="dv">3</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Criando uma função para calcular a média de um vetor numérico:</p>
 <div class="cell">
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">calc_media</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">vetor</span><span class="op">)</span> <span class="op">{</span></span>
-<span>    <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">vetor</span><span class="op">)</span><span class="op">/</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">vetor</span><span class="op">)</span></span>
-<span><span class="op">}</span></span>
-<span><span class="fu">calc_media</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span>, <span class="fl">4</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>calc_media <span class="ot">&lt;-</span> <span class="cf">function</span>(vetor) {</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sum</span>(vetor)<span class="sc">/</span><span class="fu">length</span>(vetor)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_media</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Criando uma função que obtenha os valores extremos de um vetor numérico:</p>
 <div class="cell">
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Após criar uma variável dentro do escopo da função, devemos retornar o valor da variável.</span></span>
-<span><span class="va">obter_extremos</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">vetor</span><span class="op">)</span> <span class="op">{</span></span>
-<span>    <span class="va">res</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">vetor</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">vetor</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span>
-<span>    <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">res</span><span class="op">)</span>  </span>
-<span><span class="op">}</span></span>
-<span><span class="fu">obter_extremos</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span>, <span class="fl">4</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Após criar uma variável dentro do escopo da função, devemos retornar o valor da variável.</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>obter_extremos <span class="ot">&lt;-</span> <span class="cf">function</span>(vetor) {</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    res <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">min</span>(vetor, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), <span class="fu">max</span>(vetor, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(res)  </span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="fu">obter_extremos</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section><section id="desafio" class="level2" data-number="7.6"><h2 data-number="7.6" class="anchored" data-anchor-id="desafio">
-<span class="header-section-number">7.6</span> Desafio</h2>
+</section>
+<section id="desafio" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="desafio"><span class="header-section-number">7.6</span> Desafio</h2>
 <div class="callout callout-style-simple callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -422,39 +447,39 @@ Aprender com a prática fortalecerá seu raciocínio e aprofundará seu conhecim
 <ol type="1">
 <li>Crie uma função chamada de ‘f1’ que possua uma outra função ‘f2’, esta definida dentro do escopo de ‘f1’.</li>
 </ol>
-<p>A função interna (‘f2’) deve fazer duas coisas: - Imprimir no console o ambiente atual com a função <code><a href="https://rdrr.io/r/base/environment.html">environment()</a></code> - Imprimir os objetos pertencentes ao seu escopo com a função <code><a href="https://rdrr.io/r/base/ls.html">ls()</a></code>.</p>
-<p>A função externa (‘f1’) deve fazer 3 coisas: - Deve chamar a função ‘f2’ - Imprimir no console o ambiente atual com a função <code><a href="https://rdrr.io/r/base/environment.html">environment()</a></code> - Imprimir os objetos pertencentes ao seu escopo com a função <code><a href="https://rdrr.io/r/base/ls.html">ls()</a></code>.</p>
+<p>A função interna (‘f2’) deve fazer duas coisas: - Imprimir no console o ambiente atual com a função <code>environment()</code> - Imprimir os objetos pertencentes ao seu escopo com a função <code>ls()</code>.</p>
+<p>A função externa (‘f1’) deve fazer 3 coisas: - Deve chamar a função ‘f2’ - Imprimir no console o ambiente atual com a função <code>environment()</code> - Imprimir os objetos pertencentes ao seu escopo com a função <code>ls()</code>.</p>
 <p>Uma vez definidas estas funções, chame a função externa e responda: os ambientes exibidos são os mesmos? Justifique.</p>
 <ol start="2" type="1">
 <li>Com base nas regras de escopo do R, justifique o resultado das chamadas das funções abaixo:</li>
 </ol>
 <div class="cell">
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Ex.:1</span></span>
-<span></span>
-<span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fl">12</span></span>
-<span><span class="va">f1</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">y</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="va">x</span> <span class="op">&lt;-</span> <span class="fl">10</span></span>
-<span>  <span class="va">f2</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="op">)</span> <span class="op">{</span></span>
-<span>    <span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="va">x</span> <span class="op">+</span> <span class="va">y</span><span class="op">)</span></span>
-<span>  <span class="op">}</span></span>
-<span>  <span class="fu">f2</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">}</span></span>
-<span></span>
-<span><span class="fu">f1</span><span class="op">(</span><span class="fl">4</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Ex.:2</span></span>
-<span><span class="va">z</span> <span class="op">&lt;-</span> <span class="fl">10</span></span>
-<span><span class="va">f3</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">x</span>, <span class="va">y</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="va">x</span> <span class="op">*</span> <span class="va">y</span> <span class="op">*</span> <span class="va">z</span></span>
-<span><span class="op">}</span></span>
-<span><span class="fu">f3</span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span><span class="op">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ex.:1</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">12</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>f1 <span class="ot">&lt;-</span> <span class="cf">function</span>(y) {</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>  f2 <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(x <span class="sc">+</span> y)</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">f2</span>()</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a><span class="fu">f1</span>(<span class="dv">4</span>)</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Ex.:2</span></span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>f3 <span class="ot">&lt;-</span> <span class="cf">function</span>(x, y) {</span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>  x <span class="sc">*</span> y <span class="sc">*</span> z</span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a><span class="fu">f3</span>(<span class="dv">1</span>, <span class="dv">2</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="3" type="1">
 <li>Leia o arquivo network.txt. Ele será usado nas questões 1 a 3. Este conjunto de dados representa uma rede de interação entre proteínas, cujos nomes aparecem nas colunas <code>node1*</code> e <code>node2*</code>. As demais colunas representam scores usados para inferir a força da interação. A coluna combined_score representa o score combinado destas diferentes fontes e representa a confiança total para cada interação.</li>
 </ol>
 <p>Como este arquivo representa uma rede, cada linha do dataframe lido será uma interação entre duas proteínas. Ou seja, os nós da rede estão representados nas colunas <code>node1*</code> e <code>node2*</code> e as arestas são as interações entre node1* e <code>node2*</code>.</p>
 <div class="cell">
-<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">network</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/utils/read.table.html">read.table</a></span><span class="op">(</span><span class="st">"data/network.txt"</span>, sep <span class="op">=</span> <span class="st">"\t"</span>, stringsAsFactors <span class="op">=</span> <span class="cn">F</span>, header <span class="op">=</span> <span class="cn">T</span><span class="op">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>network <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="st">"data/network.txt"</span>, <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>, <span class="at">stringsAsFactors =</span> F, <span class="at">header =</span> T)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol type="a">
 <li>Crie a função ‘filtrar_rede’ para selecionar as interações da rede com score combinado maior que 0.700.</li>
@@ -464,8 +489,8 @@ Aprender com a prática fortalecerá seu raciocínio e aprofundará seu conhecim
 <li>Output: dataframe filtrado com as interações maiores que 0.700 e contendo apenas 3 colunas (node1, node2 e combined_score) Ex:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="fu">filtrar_rede</span><span class="op">(</span>network <span class="op">=</span> <span class="va">network</span><span class="op">)</span><span class="op">)</span></span>
-<span> <span class="co"># [1] 948</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(<span class="fu">filtrar_rede</span>(<span class="at">network =</span> network))</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a> <span class="co"># [1] 948</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="2" type="a">
 <li>Crie a função ‘vizinhos’ que calcule a conectividade (quantidade de interações) de um determinado nó da rede e quais são os nós que se conectam com ele.</li>
@@ -475,9 +500,9 @@ Aprender com a prática fortalecerá seu raciocínio e aprofundará seu conhecim
 <li>Output: Imprimir no console a conectividade do nó escolhido e quais são seus vizinhos. Ex:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">vizinhos</span><span class="op">(</span>symbol <span class="op">=</span> <span class="st">"NGF"</span>, network <span class="op">=</span> <span class="va">network</span><span class="op">)</span></span>
-<span> <span class="co"># O gene  NGF tem  16 vizinhos</span></span>
-<span> <span class="co"># PIK3R1 CASP6 IKBKB NTRK1 NFKBIA PIK3CB NFKB1 PIK3R2 BAD PIK3CA CASP3 MYD88 CHUK RELA IRAK1 IKBKG</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">vizinhos</span>(<span class="at">symbol =</span> <span class="st">"NGF"</span>, <span class="at">network =</span> network)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a> <span class="co"># O gene  NGF tem  16 vizinhos</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a> <span class="co"># PIK3R1 CASP6 IKBKB NTRK1 NFKBIA PIK3CB NFKB1 PIK3R2 BAD PIK3CA CASP3 MYD88 CHUK RELA IRAK1 IKBKG</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="3" type="a">
 <li>Ainda sobre o dataset ‘network’, crie uma função que receba como argumentos o nome de um gene, o dataframe da rede e o score de homologia (coluna homology), e retorne um dataframe que mostre as interações deste gene (colunas ‘node1’ e ‘node2’) para um score de homologia maior ou igual um determinado valor. Use 0.5 como um valor padrão para este limiar de score de homologia.</li>
@@ -514,8 +539,8 @@ Aprender com a prática fortalecerá seu raciocínio e aprofundará seu conhecim
 <li>Output: número de COGs do organismo Ex:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">contar_cogs</span><span class="op">(</span>spp <span class="op">=</span> <span class="fl">3702</span>, df <span class="op">=</span> <span class="va">cog.human.data</span><span class="op">)</span></span>
-<span><span class="co"># [1] 4367</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">contar_cogs</span>(<span class="at">spp =</span> <span class="dv">3702</span>, <span class="at">df =</span> cog.human.data)</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="co"># [1] 4367</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="5" type="a">
 <li>Considere o dataset ‘attitude’. Escreva uma função que receba como argumento o nome de uma das colunas e retorne um dataframe contendo o valor da média, mediana, soma das observações, e quantidade de valores faltantes (NA) na coluna:</li>
@@ -525,13 +550,16 @@ Aprender com a prática fortalecerá seu raciocínio e aprofundará seu conhecim
 <li>Output: dataframe com os resultados Ex:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="fu">estatisticas</span><span class="op">(</span><span class="va">attitude</span>, <span class="st">"rating"</span><span class="op">)</span></span>
-<span><span class="co"># media mediana soma n_na</span></span>
-<span><span class="co"># 1 64.63333    65.5 1939    0</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">estatisticas</span>(attitude, <span class="st">"rating"</span>)</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="co"># media mediana soma n_na</span></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 1 64.63333    65.5 1939    0</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
-</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -710,18 +738,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -753,7 +770,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp("https:\/\/dalmolingroup\.github\.io\/introductionR-course\/");
@@ -761,7 +798,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -858,7 +895,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -1083,7 +1119,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script><nav class="page-navigation"><div class="nav-page nav-page-previous">
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
       <a href="../content/06_imp_exp.html" class="pagination-link" aria-label="Importação e exportação de dados">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Importação e exportação de dados</span></span>
       </a>          
@@ -1092,7 +1130,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<footer class="footer"><div class="nav-footer">
+<footer class="footer">
+  <div class="nav-footer">
     <div class="nav-footer-left">
       &nbsp;
     </div>   
@@ -1104,6 +1143,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+
+
 
 
 </body></html>

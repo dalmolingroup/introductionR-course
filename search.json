@@ -14,7 +14,7 @@
     "href": "content/01_history.html",
     "title": "1  Histórico da linguagem",
     "section": "",
-    "text": "1.1 Instalação do R\nO interpretador da linguagem R pode ser instalado em Linux, Mac e Windows1, e encontra-se disponível gratuitamente no Comprehensive R Archive Network (CRAN).",
+    "text": "1.1 Instalação do R\nJohn Chambers iniciou a criação de um ambiente de análises estatísticas em 1976 no Bell Telephone Laboratories, também conhecido como Bell Labs. Naquela época a computação estatística costumava ser feita por meio de chamadas diretas às funções de bibliotecas Fortran, e tal ambiente foi projetado para oferecer uma abordagem alternativa, mais interativa, e com funções de documentação acessível. Este ambiente foi denominado de ‘S’ e após 1979 o nome passou a ser usado sem as aspas simples.\nEm 1988 foi lançada a versão S3, muitas mudanças foram feitas na sintaxe da linguagem, estendendo o conceito de objetos, e novas funcionalidades possibilitavam a passagem de funções para outras funções, como o uso do apply. Foi publicado o livro The New S Language para introduzir as novas funcionalidades e ajudar os usuários a entender como os códigos deveriam ser escritos.\nA linguagem R foi criada em 1991, como uma variante da linguagem S, por Ross Ihaka e Robert Gentleman no Departamento de Estatística da Universidade de Auckland, e foi anunciada para o público em 1993. Neste mesmo ano, a Bell Labs concedeu uma licença exclusiva à StatSci, que posteriormente virou a Insightful Corporation, para desenvolver e vender a linguagem S. A Insightful Corporation adicionou algumas funcionalidades à linguagem, como a adição de uma interface gráfica, e vendia esta implementação como o produto S-PLUS.\nUma das limitações da linguagem S era que ela só estava disponível no pacote comercial S-PLUS, e em 1995, Martin Mächler convenceu Ross e Robert a usarem a GNU General Public License, tornando o R um software livre. Em 1998 foi lançada a última versão da linguagem S, conhecida como S4, que fornecia funcionalidades avançadas de orientação a objetos. Em 2000 a versão 1.0.0 da linguagem R foi lançada publicamente. E em 2008 a TIBCO Software Incorporation adquiriu a Insightful Corporation por 25 milhões de dólares.\nO interpretador da linguagem R pode ser instalado em Linux, Mac e Windows1, e encontra-se disponível gratuitamente no Comprehensive R Archive Network (CRAN).",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Histórico da linguagem</span>"
     ]
@@ -42,7 +42,7 @@
   {
     "objectID": "content/02_operation.html",
     "href": "content/02_operation.html",
-    "title": "\n2  Funcionamento básico\n",
+    "title": "2  Funcionamento básico",
     "section": "",
     "text": "2.1 Operadores\n2+5         #Adicao                     \n5-2         #Subtracao\n2*5         #Multiplicacao\n8/2         #Divisao\n2^5         #Exponenciacao\n5%%2        #Resto da divisão\n3==5          #Igual\n3!=5          #Diferente\n3&gt;5         #Maior que\n3&lt;5         #Menor que\n3&gt;=5          #Maior ou igual\n3&lt;=5          #Menor ou igual\n((2+5-3)*10)^4/7^4",
     "crumbs": [
@@ -52,7 +52,7 @@
   {
     "objectID": "content/02_operation.html#operadores",
     "href": "content/02_operation.html#operadores",
-    "title": "\n2  Funcionamento básico\n",
+    "title": "2  Funcionamento básico",
     "section": "",
     "text": "Aritmetica basica\n\n\n\nRelacionais\n\n\n\nOperações podem ser concatenadas:",
     "crumbs": [
@@ -62,8 +62,8 @@
   {
     "objectID": "content/02_operation.html#variáveis",
     "href": "content/02_operation.html#variáveis",
-    "title": "\n2  Funcionamento básico\n",
-    "section": "\n2.2 Variáveis",
+    "title": "2  Funcionamento básico",
+    "section": "2.2 Variáveis",
     "text": "2.2 Variáveis\nA seta “&lt;-” representa o simbolo de atribuição e ao escrever o nome do objeto, seu valor sera impresso. Veja o exemplo:\n\nx &lt;- 1\nx\n\nCaso algum valor seja atribuído ao mesmo objeto, ele será sobrescrito:\n\nx &lt;- \"gol do gremio!\"\nx\n\nOs resultados de operações podem ser salvos em objetos:\n\nx&lt;-2+5\ny=5-2\n2*5-&gt;w\nz&lt;-8/2\n\nresultado &lt;- (((x-y)*w)^z)/(x^z)\nresultado",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Funcionamento básico</span>"
@@ -72,8 +72,8 @@
   {
     "objectID": "content/02_operation.html#funções",
     "href": "content/02_operation.html#funções",
-    "title": "\n2  Funcionamento básico\n",
-    "section": "\n2.3 Funções",
+    "title": "2  Funcionamento básico",
+    "section": "2.3 Funções",
     "text": "2.3 Funções\nChamando funções:\n\nsum(1,3,5)\na&lt;-rep(\"Aluno\",times=3)\na",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Funcionamento básico</span>"
@@ -82,8 +82,8 @@
   {
     "objectID": "content/02_operation.html#acessando-a-documentação",
     "href": "content/02_operation.html#acessando-a-documentação",
-    "title": "\n2  Funcionamento básico\n",
-    "section": "\n2.4 Acessando a documentação",
+    "title": "2  Funcionamento básico",
+    "section": "2.4 Acessando a documentação",
     "text": "2.4 Acessando a documentação\nEstas funções buscam e exibem a documentação de funções:\n\nhelp(sum)\n?sd\n??plot",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Funcionamento básico</span>"
@@ -92,8 +92,8 @@
   {
     "objectID": "content/02_operation.html#diretório-de-trabalho",
     "href": "content/02_operation.html#diretório-de-trabalho",
-    "title": "\n2  Funcionamento básico\n",
-    "section": "\n2.5 Diretório de trabalho",
+    "title": "2  Funcionamento básico",
+    "section": "2.5 Diretório de trabalho",
     "text": "2.5 Diretório de trabalho\nEstas funções manipulam o diretório de trabalho:\n\n# verifica o caminho para o diretório de trabalho\ngetwd()\n# define o diretório de trabalho\nsetwd()\n# lista os arquivos presentes no diretório de trabalho\nlist.files()\n# carrega um arquivo binário do diretório de trabalho para o ambiente\nload()\n# salva o conteúdo de uma variável no diretório de trabalho\nsave()",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Funcionamento básico</span>"
@@ -102,8 +102,8 @@
   {
     "objectID": "content/02_operation.html#desafio",
     "href": "content/02_operation.html#desafio",
-    "title": "\n2  Funcionamento básico\n",
-    "section": "\n2.6 Desafio",
+    "title": "2  Funcionamento básico",
+    "section": "2.6 Desafio",
     "text": "2.6 Desafio\n\n\n\n\n\n\nPratique sem IA!\n\n\n\nOs desafios a seguir foram criados para ajudá-lo a desenvolver suas habilidades de forma independente.\nEvite o uso de Inteligência Artificial e tente resolver os problemas por conta própria.\nAprender com a prática fortalecerá seu raciocínio e aprofundará seu conhecimento! 🚀\n\n\nJosé e Paulo adoram jogar basquete nas suas horas livres. Eles mantém uma competição entre si e por isso decidiram registrar todos os pontos que eles marcam durante as partidas.\nAté agora foram 8 partidas:\n\nJosé fez 8, 10, 12, 9, 15, 16, 11, 7 cestas.\nPaulo fez 5, 11, 13, 14, 23, 14, 9, 10 cestas.\n\n\nCrie dois objetos que contenham o número de cestas que cada um fez:\nVerifique a classe de cada um dos objetos:\nCom a utilização da ajuda do R, procure por uma função que possibilite o cálculo de médias. Com ela, calcule as médias de cestas dos dois jogadores e atribua estes valores a objetos diferentes:\nCompare os valores das médias calculadas usando os operadores lógicos “&gt;” e “&lt;”. Quem teve um desempenho médio melhor?",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Funcionamento básico</span>"
@@ -112,9 +112,9 @@
   {
     "objectID": "content/03_vectors.html",
     "href": "content/03_vectors.html",
-    "title": "\n3  Vetores\n",
+    "title": "3  Vetores",
     "section": "",
-    "text": "3.1 Hierarquia de classes\nVetores comportam apenas uma classe de elementos. Quando um vetor é criado com valores pertecentes a classes distintas, é feita uma conversão implícita. Um valor logical é convertido para numeric, e um valor numeric é convertido para character:\nclass(c(1, 2, 3))\nclass(c(\"1\", \"2\", \"3\"))\nclass(c(TRUE, FALSE, FALSE))\nclass(c(\"TRUE\", \"FALSE\", \"FALSE\"))\nclass(c(1, \"a\", TRUE))\nclass(c(1, \"a\"))\nclass(c(1, T))\nclass(c(\"a\", T))\nCom esta hierarquia, é possível somar valores lógicos, sendo TRUE equivalente a 11, e FALSE equivalente a 0:\nlogical&lt;- c(TRUE, FALSE, FALSE, TRUE, FALSE)\nsum(logico)\nUma conversão explícita pode ser feita com as funções as.&lt;nome da classe&gt;:\nx&lt;-0:10\nx\nclass(x)\na&lt;-as.numeric(x)\na\nclass(a)\nb&lt;-as.character(x)\nb\nclass(b)\nc&lt;-as.logical(x)\nc\nclass(c)",
+    "text": "3.1 Hierarquia de classes\nFunção de concatenação c():\nA função class() pode ser usada para acessar a classe de um determinado objeto:\nA função vector() cria vetores com valores padrões de uma determinada classe:\nVetores comportam apenas uma classe de elementos. Quando um vetor é criado com valores pertecentes a classes distintas, é feita uma conversão implícita. Um valor logical é convertido para numeric, e um valor numeric é convertido para character:\nclass(c(1, 2, 3))\nclass(c(\"1\", \"2\", \"3\"))\nclass(c(TRUE, FALSE, FALSE))\nclass(c(\"TRUE\", \"FALSE\", \"FALSE\"))\nclass(c(1, \"a\", TRUE))\nclass(c(1, \"a\"))\nclass(c(1, T))\nclass(c(\"a\", T))\nCom esta hierarquia, é possível somar valores lógicos, sendo TRUE equivalente a 11, e FALSE equivalente a 0:\nlogical&lt;- c(TRUE, FALSE, FALSE, TRUE, FALSE)\nsum(logico)\nUma conversão explícita pode ser feita com as funções as.&lt;nome da classe&gt;:\nx&lt;-0:10\nx\nclass(x)\na&lt;-as.numeric(x)\na\nclass(a)\nb&lt;-as.character(x)\nb\nclass(b)\nc&lt;-as.logical(x)\nc\nclass(c)",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Vetores</span>"
     ]
@@ -122,7 +122,7 @@
   {
     "objectID": "content/03_vectors.html#hierarquia-de-classes",
     "href": "content/03_vectors.html#hierarquia-de-classes",
-    "title": "\n3  Vetores\n",
+    "title": "3  Vetores",
     "section": "",
     "text": "Ex.4: Verifique se “x” e “a” são iguais\n\n\n\n\n\n\nidentical(x, a)\n\n\n\n\n\n\n\n\n\n\nEx.5: Tente converter os vetores (a, b, c) em numeric\n\n\n\n\n\n\nas.numeric(a)\nas.numeric(b)\nas.numeric(c)\n\n\n\n\n\n\n\n\n\n\nEx.6: Crie um vetor de caracteres de “a” até “d” e o converta em numérico\n\n\n\n\n\n\nchar_vec &lt;- c(\"a\", \"b\", \"c\", \"d\")\nas.numeric(char_vec) # Retornará NA pois não há conversão direta",
     "crumbs": [
@@ -132,8 +132,8 @@
   {
     "objectID": "content/03_vectors.html#valores-não-disponíveis-ou-impossíveis",
     "href": "content/03_vectors.html#valores-não-disponíveis-ou-impossíveis",
-    "title": "\n3  Vetores\n",
-    "section": "\n3.2 Valores não disponíveis ou impossíveis",
+    "title": "3  Vetores",
+    "section": "3.2 Valores não disponíveis ou impossíveis",
     "text": "3.2 Valores não disponíveis ou impossíveis\nValores não disponíveis são representados por NA (Not Available), e valores impossíveis, como o resultado de uma divisão por 0, são representados por NaN (Not a Number).\n\nx&lt;-c(1, 2, 3, NA)\ny&lt;-c(\"a\", \"b\", \"c\", NA)\nis.na(x)\nw&lt;-rep(NA, 10)\nw\nclass(w)\nz&lt;-rep(NA_integer_, 10)\nz\nclass(z)\na &lt;- c(1, 3, NA, 7, 9)\nsum(a)\nsum(a, na.rm=TRUE)",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Vetores</span>"
@@ -142,8 +142,8 @@
   {
     "objectID": "content/03_vectors.html#atributos-de-objetos",
     "href": "content/03_vectors.html#atributos-de-objetos",
-    "title": "\n3  Vetores\n",
-    "section": "\n3.3 Atributos de objetos",
+    "title": "3  Vetores",
+    "section": "3.3 Atributos de objetos",
     "text": "3.3 Atributos de objetos\nTodos os objetos possuem atributos:\n\nx&lt;-1:5\nx\nlength(x)\ndim(x)\nattributes(x)\nnames(x)&lt;-c(\"a\", \"b\", \"c\", \"d\", \"e\")\nx\nattributes(x)",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Vetores</span>"
@@ -152,8 +152,8 @@
   {
     "objectID": "content/03_vectors.html#fator",
     "href": "content/03_vectors.html#fator",
-    "title": "\n3  Vetores\n",
-    "section": "\n3.4 Fator",
+    "title": "3  Vetores",
+    "section": "3.4 Fator",
     "text": "3.4 Fator\nUm vetor da classe factor é um vetor categórico que possui o atributo levels:\n\nx&lt;-factor(c(\"s\", \"n\", \"n\", \"s\", \"s\"))\nz&lt;-factor(c(\"alto\", \"baixo\", \"medio\"))\nx\nz",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Vetores</span>"
@@ -162,8 +162,8 @@
   {
     "objectID": "content/03_vectors.html#trabalhando-com-vetores",
     "href": "content/03_vectors.html#trabalhando-com-vetores",
-    "title": "\n3  Vetores\n",
-    "section": "\n3.5 Trabalhando com vetores",
+    "title": "3  Vetores",
+    "section": "3.5 Trabalhando com vetores",
     "text": "3.5 Trabalhando com vetores\nNo R as operações são vetorizadas:\n\nx&lt;-1:5\nx\ny&lt;-6:10\ny\n\nSoma dos valores de ambos os vetores\n\nx+y\n\nPodemos multiplicar um vetor por um número:\n\nx*2               \nx^2\nz&lt;-c(x,y)\nz\nz+x\nw&lt;-1:3\nw+x\nl&lt;-c(T, T, F, T, F, F)\nl/2\n\nUsamos [] para acessar elementos de vetores:\n\nletter&lt;-c(\"x\", \"y\", \"z\", \"w\", \"j\")\n# acessa o segundo elemento do vetor\nletter[2]               \n# podemos usar sequências de valores\nletter[2:4]             \n# usamos a função c() para valores não contíguos\nletter[c(1, 4)]         \n# usamos números negativos para excluir um ou mais valores\nletter[-2]              \nletter[c(-2, -5)]\n# podemos criar índices numéricos\nidx&lt;-c(1, 4)            \nletter[idx]\nx&lt;-1:10\n# podemos usar operadores relacionais como filtros\nx[x&gt;7]                  \n# também funciona com caracteres, levando em consideração a ordem lexicográfica\nletter[letter&gt;\"k\"]      \nletter[letter&lt;\"k\"]\nletter==\"z\"\n\n\n\n\n\n\n\nEx. 7: Crie um vetor de 1 até 10 e substitua o valor da oitava posição pelo valor da primeira posição.\n\n\n\n\n\n\nvec &lt;- 1:10\nvec[8] &lt;- vec[1]\nvec\n\n\n\n\nFunções para identificar valores extremos:\n\n# definindo uma semente para a geração de valores aleatórios\nset.seed(1)\ns&lt;-sample(-1000:1000, 200)\n# procura a posição do maior valor\nwhich.max(s)            \n# exibe o maior valor\nmax(s)\n# exibe o menor valor\nmin(s)\n# exibe o intervalo dos valores do vetor\nrange(s)\n# cria um vetor lógico\ns&gt;0                     \n# cria um vetor com as posições que satisfazem o comando\nwhich(s&gt;0)              \n\n\n\n\n\n\n\nEx.8: Quantos valores de s são maiores que 0?\n\n\n\n\n\n\nsum(s &gt; 0)\n\n\n\n\n\n\n\n\n\n\nEx.9: Faça um vetor contendo os valores de s maiores do que 0.\n\n\n\n\n\n\npositivos &lt;- s[s &gt; 0]\npositivos\n\n\n\n\nFunções de ordenamento:\n\nx&lt;-c(3, 8, 2, 1, 5, 9, 7, 7, 3)\nx\n# ordena um vetor\nsort(x)        \nsort(x, decreasing = T)\n# informa a ordem na qual cada elemento deve ser acessado para exibir o conteúdo do vetor em ordem crescente\norder(x)                \n# exibe o conteúdo do vetor de forma aleatória, e uma única vez, cada posição\nsample(x)     \n# elimina as replicatas\nunique(x)\n# exibe um vetor lógico referente à posição das replicatas\nduplicated(x)\n\n\n\n\n\n\n\nEx.10: Quantos duplicados existem em x?\n\n\n\n\n\n\nsum(duplicated(x))",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Vetores</span>"
@@ -172,8 +172,8 @@
   {
     "objectID": "content/03_vectors.html#strings",
     "href": "content/03_vectors.html#strings",
-    "title": "\n3  Vetores\n",
-    "section": "\n3.6 Strings",
+    "title": "3  Vetores",
+    "section": "3.6 Strings",
     "text": "3.6 Strings\nConceitualmente, uma string é um vetor de caracteres2. Certas operações são recorrentes na manipulação de strings, como a inserção de conteúdo numa dada posição, substituição do conteúdo de uma porção do vetor, ou a busca de um determinado padrão:\n\nx&lt;-20:30\ny&lt;-1:4\n# adiciona valores num vetor numa posição específica\nappend(x, y, after = 3)\n# concatena dois vetores, converte em character\nx&lt;-paste(\"dt\", 1:10, sep = \"\")     \nx\n\nIdentificando expressões regulares (regex) numa string:\n\nx &lt;- c(\"16_24cat\", \"25_34cat\", \"35_44catch\", \"45_54Cat\", \"55_104fat\")\n# identifica regex por posição\ngrep(\"cat\", x)               \n# o argumento value = T retorna os valores\ngrep(\"cat\", x, value = T)           \n# $ é um metacaractere que identifica o término da string\ngrep(\"cat$\", x, ignore.case = T)    \n# a função grepl() retorna um vetor lógico\ngrepl(\"cat$\", x, ignore.case = T)",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Vetores</span>"
@@ -182,9 +182,9 @@
   {
     "objectID": "content/03_vectors.html#expressões-regulares",
     "href": "content/03_vectors.html#expressões-regulares",
-    "title": "\n3  Vetores\n",
-    "section": "\n3.7 Expressões regulares",
-    "text": "3.7 Expressões regulares\n\n\nMetacaractere\nFuncionalidade\n\n\n\n*\n0 ou mais vezes\n\n\n+\numa ou mais vezes\n\n\n?\n0 ou 1 vez\n\n\n{n}\nexatamente n vezes\n\n\n{n,}\npelo menos n vezes\n\n\n{n,m}\nentre n e m vezes\n\n\n^\ninício da string\n\n\n$\nfinal da string\n\n\n\n\nstrings &lt;- c(\"a\", \"ab\", \"acb\", \"accb\", \"acccb\", \"accccb\")\ngrep(\"acb\", strings)\ngrep(\"ac*b\", strings)\ngrep(\"ac+b\", strings)\ngrep(\"ac?b\", strings)\ngrep(\"ac{2}b\", strings)\ngrep(\"ac{2,}b\", strings)\ngrep(\"ac{2,3}b\", strings)",
+    "title": "3  Vetores",
+    "section": "3.7 Expressões regulares",
+    "text": "3.7 Expressões regulares\n\n\n\nMetacaractere\nFuncionalidade\n\n\n\n\n*\n0 ou mais vezes\n\n\n+\numa ou mais vezes\n\n\n?\n0 ou 1 vez\n\n\n{n}\nexatamente n vezes\n\n\n{n,}\npelo menos n vezes\n\n\n{n,m}\nentre n e m vezes\n\n\n^\ninício da string\n\n\n$\nfinal da string\n\n\n\n\nstrings &lt;- c(\"a\", \"ab\", \"acb\", \"accb\", \"acccb\", \"accccb\")\ngrep(\"acb\", strings)\ngrep(\"ac*b\", strings)\ngrep(\"ac+b\", strings)\ngrep(\"ac?b\", strings)\ngrep(\"ac{2}b\", strings)\ngrep(\"ac{2,}b\", strings)\ngrep(\"ac{2,3}b\", strings)",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Vetores</span>"
     ]
@@ -192,8 +192,8 @@
   {
     "objectID": "content/03_vectors.html#desafio",
     "href": "content/03_vectors.html#desafio",
-    "title": "\n3  Vetores\n",
-    "section": "\n3.8 Desafio",
+    "title": "3  Vetores",
+    "section": "3.8 Desafio",
     "text": "3.8 Desafio\n\n\n\n\n\n\nPratique sem IA!\n\n\n\nOs desafios a seguir foram criados para ajudá-lo a desenvolver suas habilidades de forma independente.\nEvite o uso de Inteligência Artificial e tente resolver os problemas por conta própria.\nAprender com a prática fortalecerá seu raciocínio e aprofundará seu conhecimento! 🚀\n\n\n\nConsidere os seguintes elementos: 1, 4, 5, “a”, 10L e TRUE\n\n\nCrie um vetor com os elementos acima.\nVerifique a classe do vetor criado. Se houve coerção implícita, explique.\n\n\nConsidere as operações vetorizadas:\n\n\n# a)\nc(1, 3, 5) + c(2, 4, 6)\n\n# b)\nc(1, 3, 5) + c(2, 4, 6, 8)\n\nExplique o que ocorre em cada uma das operações acima.\n\nConsidere o seguinte vetor:\n\n\nx &lt;- c(-1, 45, -6, 88, 30, 4)\n\n\nObtenha um outro vetor a partir deste que contenha apenas os elementos da posição 2 e da última posição.\nObtenha um outro vetor a partir de x que contenha todos os elementos, exceto o 3º elemento.\nAtribua um nome para cada um dos elementos do vetor x.\nObtenha a posição do valor máximo contido no vetor x.\nObtenha um outro vetor a partir de x com todos os valores positivos.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Vetores</span>"
@@ -202,7 +202,7 @@
   {
     "objectID": "content/03_vectors.html#footnotes",
     "href": "content/03_vectors.html#footnotes",
-    "title": "\n3  Vetores\n",
+    "title": "3  Vetores",
     "section": "",
     "text": "na conversão de valores numéricos para lógicos, 0 é convertido para FALSE e qualquer outro valor é convertido em TRUE↩︎\nindependente da quantidade de caracteres o atributo length será sempre igual a 1↩︎",
     "crumbs": [
@@ -212,9 +212,9 @@
   {
     "objectID": "content/04_matrix_lists_arrays.html",
     "href": "content/04_matrix_lists_arrays.html",
-    "title": "\n4  Matrizes\n",
+    "title": "4  Matrizes",
     "section": "",
-    "text": "4.1 Arrays\nUm array é um vetor que possui mais de duas dimensões:\n# criando um vetor multidimensional com 4 matrizes de 5 linhas e 10 colunas\nar&lt;-array(1:200, c(5, 10, 4))\nar\n# acessando a primeira matriz [linha, coluna, matriz]\nar[,,1]",
+    "text": "4.1 Arrays\nMatrizes são vetores bidimensionais que possuem o atributo dimensão. Por serem vetores, comportam apenas uma classe de elementos:\nUm array é um vetor que possui mais de duas dimensões:\n# criando um vetor multidimensional com 4 matrizes de 5 linhas e 10 colunas\nar&lt;-array(1:200, c(5, 10, 4))\nar\n# acessando a primeira matriz [linha, coluna, matriz]\nar[,,1]",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Matrizes</span>"
     ]
@@ -222,8 +222,8 @@
   {
     "objectID": "content/04_matrix_lists_arrays.html#listas",
     "href": "content/04_matrix_lists_arrays.html#listas",
-    "title": "\n4  Matrizes\n",
-    "section": "\n4.2 Listas",
+    "title": "4  Matrizes",
+    "section": "4.2 Listas",
     "text": "4.2 Listas\nListas são tipos especiais de vetores que comportam elementos de diferentes classes:\n\na &lt;- c(1, 3, NA, 7, 9)\nb&lt;-matrix(1:200, 20,10)\nc&lt;-\"Gol do Gremio\"\nz&lt;-factor(c(\"alto\", \"baixo\", \"medio\"))\nls&lt;-list(a, b, c, z)\n# cada elemento da lista aparece com [[]]\nls                    \n# a função vector() pode criar listas vazias\nls1&lt;-vector(\"list\", 5)   \nls1\n\n\n4.2.1 Trabalhando com listas\nListas podem ser acessadas com os operadores [], [[]] e $ (para listas nomeadas):\n\n# [] extrai uma lista\nls[1]        \n# [[]] extrai o objeto interno\nls[[1]]           \nclass(ls[1])\nclass(ls[[1]])\n# posição na lista e posição no elemento\nls[[c(1,2)]]      \nls[[2]][2,]\nnames(ls)&lt;-c(\"Arilson\", \"Roger\", \"Paulo Nunes\", \"Jardel\")\nls$Roger",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Matrizes</span>"
@@ -232,8 +232,8 @@
   {
     "objectID": "content/04_matrix_lists_arrays.html#desafio",
     "href": "content/04_matrix_lists_arrays.html#desafio",
-    "title": "\n4  Matrizes\n",
-    "section": "\n4.3 Desafio",
+    "title": "4  Matrizes",
+    "section": "4.3 Desafio",
     "text": "4.3 Desafio\n\n\n\n\n\n\nPratique sem IA!\n\n\n\nOs desafios a seguir foram criados para ajudá-lo a desenvolver suas habilidades de forma independente.\nEvite o uso de Inteligência Artificial e tente resolver os problemas por conta própria.\nAprender com a prática fortalecerá seu raciocínio e aprofundará seu conhecimento! 🚀\n\n\n\nConsidere o seguinte vetor:\n\n\nx &lt;- 1:18\n\n\nCom este vetor, construa uma matriz de 6 linhas e 3 colunas de duas maneiras diferentes.\nAdicione o seguinte vetor como um coluna da matriz:\n\n\nv &lt;- letters[1:6]\n\n\nO que acontece quando juntamos este vetor à matriz?\nAtribua nomes às colunas e às linhas:\n\n\nConsidere a seguinte matriz:\n\n\nset.seed(1)\nm &lt;- matrix(sample(1:100, 20), nrow = 4, ncol = 5)\n\n\nOrdene, de maneira crescente, as linhas da matriz de acordo com os valores da coluna 1.\nExclua as colunas 2 e 4 desta matriz.\nCrie um outro objeto para guardar o valor da soma das colunas desta matriz.\n\n\nConsidere o objeto ‘x’:\n\n\nx &lt;- list(list(list()))\n\n# A função 'str()' mostra a estrutura de um objeto.\nstr(x) \n\n# A função 'is.recursive()' indica se um objeto é recursivo\nis.recursive(x) \n\n\n# Agora conside a seguinte lista:\nls &lt;- list(list(1, 2), 1:10, letters[1:5])\n\n\nComo os objetos da classe das listas diferem dos vetores atômicos?\nUse a função ‘length’ na lista ‘ls’ acima. O que ela retorna?\nQual a classe de cada elemento desta lista?\nAtribua nomes a cada um elementos desta lista.\nQual é a diferença entre as saídas dos dois comandos abaixo?\n\n\nls[2]\nls[[2]]\n\n\nObtenha os valores (acesse os elementos de duas formas diferentes):\n\n\n## 1) do 3º elemento da 2ª posição da lista:\n\n\n\n## 2) os elementos 1 ao 4 da terceira posição da lista.\n\n\nConsidere o vetor:\n\n\nb &lt;- 1:12\n\nCom este vetor, crie dois objetos do tipo ‘array’, usando duas abordagens diferentes.",
     "crumbs": [
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Matrizes</span>"
@@ -242,9 +242,9 @@
   {
     "objectID": "content/05_dataframes.html",
     "href": "content/05_dataframes.html",
-    "title": "\n5  Data.frames\n",
+    "title": "5  Data.frames",
     "section": "",
-    "text": "5.0.1 Trabalhando com data.frames\nPara acessar data.frames podemos usar os operadores [], [[]] e $:\ndt&lt;-data.frame(number=c(1, 2, 3, 4, 5),\n               letter = c(\"x\", \"y\", \"z\", \"w\", \"j\"),\n               logical = c(TRUE, FALSE, FALSE, TRUE, FALSE))\n# [[ ]] acessa cada coluna por posição\ndt[[1]]              \n# [ ] acessa as coordenadas [linha, coluna]\ndt[,1]               \n# $ acessa a coluna pelo nome\ndt$number            \n# carrega o data.frame mtcars\ncars&lt;-mtcars        \n# mostra as 6 primeiras linhas\nhead(cars)          \n# mostra as 6 ultimas linhas\ntail(cars)\n# data.frames possuem colnames e rownames\ncolnames(dt)\nrow.names(dt)\n# podemos alterar colnames e rownames\nrow.names(dt)&lt;-c(\"a\", \"b\", \"c\", \"d\", \"e\")\n# alterando apenas a posição 2\ncolnames(dt)[2]&lt;-\"letras\"     \n# podemos alterar valores específicos de um data.frame\ndt[3,1]&lt;-\"10\"\ndt$logical&lt;-as.numeric(dt$logical)\ndt$letras&lt;-NA\nÉ possível verificar as ocorrencias de um data.frame em outro:\nbiometria&lt;-data.frame(nomes=c(\"Carlos\", \"Roberto\", \"Olivio\", \"Joel\"),\n                      altura=c(180, 187, 155, 168),\n                      peso=c(80, 90, 98, 64))\nbiometria\nesportes&lt;-data.frame(nomes=c(\"Carlos\", \"Roberto\", \"Olivio\", \"Jomar\"),\n                     esportes=c(\"futebol\", \"remo\", \"sumo\", \"maratona\"))\nesportes\n# retorna um vetor lógico\nbiometria$nomes %in% esportes$nomes\n# pode ser usado como índice\nidx&lt;-biometria$nomes %in% esportes$nomes    \nx&lt;-biometria[idx,]\nx\n# ordenando data.frames por uma coluna\nbiometria&lt;-biometria[with(biometria, order(altura)), ]\nbiometria\nUnindo data.frames com a função merge():\nunido&lt;-merge(biometria, esportes, by=\"nomes\")\nunido\n# as informações não disponíveis são preenchidas por NA\n# com todos os presentes no primeiro\nunido&lt;-merge(biometria, esportes, by=\"nomes\", all.x=T)\nunido\n# com todos os presentes no segundo\nunido&lt;-merge(biometria, esportes, by=\"nomes\", all.y=T)\nunido\n# com todos presentes\nunido&lt;-merge(biometria, esportes, by=\"nomes\", all=T)\nunido\n#load(\"Data/COGs.RData\")",
+    "text": "5.0.1 Trabalhando com data.frames\nUm data.frame é um tipo especial de lista, onde todos os elementos devem possuir o mesmo length. Por ser uma lista, cada posição comporta elementos de diferentes classes. Do ponto de vista prático, o data.frame funciona como uma planilha bidimensional formado por vetores de mesmo tamanho, sendo cada vetor uma coluna:\nPara acessar data.frames podemos usar os operadores [], [[]] e $:\ndt&lt;-data.frame(number=c(1, 2, 3, 4, 5),\n               letter = c(\"x\", \"y\", \"z\", \"w\", \"j\"),\n               logical = c(TRUE, FALSE, FALSE, TRUE, FALSE))\n# [[ ]] acessa cada coluna por posição\ndt[[1]]              \n# [ ] acessa as coordenadas [linha, coluna]\ndt[,1]               \n# $ acessa a coluna pelo nome\ndt$number            \n# carrega o data.frame mtcars\ncars&lt;-mtcars        \n# mostra as 6 primeiras linhas\nhead(cars)          \n# mostra as 6 ultimas linhas\ntail(cars)\n# data.frames possuem colnames e rownames\ncolnames(dt)\nrow.names(dt)\n# podemos alterar colnames e rownames\nrow.names(dt)&lt;-c(\"a\", \"b\", \"c\", \"d\", \"e\")\n# alterando apenas a posição 2\ncolnames(dt)[2]&lt;-\"letras\"     \n# podemos alterar valores específicos de um data.frame\ndt[3,1]&lt;-\"10\"\ndt$logical&lt;-as.numeric(dt$logical)\ndt$letras&lt;-NA\nÉ possível verificar as ocorrencias de um data.frame em outro:\nbiometria&lt;-data.frame(nomes=c(\"Carlos\", \"Roberto\", \"Olivio\", \"Joel\"),\n                      altura=c(180, 187, 155, 168),\n                      peso=c(80, 90, 98, 64))\nbiometria\nesportes&lt;-data.frame(nomes=c(\"Carlos\", \"Roberto\", \"Olivio\", \"Jomar\"),\n                     esportes=c(\"futebol\", \"remo\", \"sumo\", \"maratona\"))\nesportes\n# retorna um vetor lógico\nbiometria$nomes %in% esportes$nomes\n# pode ser usado como índice\nidx&lt;-biometria$nomes %in% esportes$nomes    \nx&lt;-biometria[idx,]\nx\n# ordenando data.frames por uma coluna\nbiometria&lt;-biometria[with(biometria, order(altura)), ]\nbiometria\nUnindo data.frames com a função merge():\nunido&lt;-merge(biometria, esportes, by=\"nomes\")\nunido\n# as informações não disponíveis são preenchidas por NA\n# com todos os presentes no primeiro\nunido&lt;-merge(biometria, esportes, by=\"nomes\", all.x=T)\nunido\n# com todos os presentes no segundo\nunido&lt;-merge(biometria, esportes, by=\"nomes\", all.y=T)\nunido\n# com todos presentes\nunido&lt;-merge(biometria, esportes, by=\"nomes\", all=T)\nunido\n#load(\"Data/COGs.RData\")",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data.frames</span>"
     ]
@@ -252,8 +252,8 @@
   {
     "objectID": "content/05_dataframes.html#desafio",
     "href": "content/05_dataframes.html#desafio",
-    "title": "\n5  Data.frames\n",
-    "section": "\n5.1 Desafio",
+    "title": "5  Data.frames",
+    "section": "5.1 Desafio",
     "text": "5.1 Desafio\n\n\n\n\n\n\nPratique sem IA!\n\n\n\nOs desafios a seguir foram criados para ajudá-lo a desenvolver suas habilidades de forma independente.\nEvite o uso de Inteligência Artificial e tente resolver os problemas por conta própria.\nAprender com a prática fortalecerá seu raciocínio e aprofundará seu conhecimento! 🚀\n\n\n\nCrie os dataframes abaixo:\n\n\npeso &lt;- data.frame(\"Nome\" = c(\"Bruno\", \"Dionisio\",\"Eduardo\", \"Ana\", \"Silvia\", \"Elizete\", \"Renata\", \"Arlete\", \"Lucas\"),\n                   \"Peso\" = c(73, 68, 65, 73, 60, 65, 70, 83, 68), stringsAsFactors = F)\n\naltura &lt;- data.frame(\"Nome\" = c(\"Davi\", \"Kevin\",\"Eduardo\",\"Lucas\", \"Antonio\", \"Moises\", \"Dionisio\", \"Ana\", \"Renata\"),\n                     \"Altura\" = c(150, 193, 152, 175, 191, 173, 180, 163, 178), stringsAsFactors = F)\n\nidade &lt;- data.frame(\"Nome\" = c(\"Eloise\", \"Ana\",\"Flavia\",\"Dayse\", \"Eduardo\", \"Silvia\", \"Dionisio\", \"Renata\", \"Bruno\"),\n                    \"Idade\" = c(24, 27, 30, 21, 37, 18, 43, 26, 47), stringsAsFactors = F)\n\nprofissao &lt;- data.frame(\"Nome\" = c(\"Dionisio\", \"Renata\",\"Ana\",\"Flavia\", \"Thais\", \"Daniel\", \"Fernanda\", \"Bárbara\", \"Henrique\"),\n                        \"Profissao\" = c(\"Programador\", \"Pesquisadora\", \"Advogada\", \"Farmaceutica\", \"Bombeira Civil\", \"Cabelereiro\",\n                                        \"Cozinheira\", \"Estiliesta\", \"Professor\"), stringsAsFactors = F)\n\n\nNo dataframe peso, verifique quantos valores iguais de peso existem.\nNo dataframe altura, verifique quantas e quais pessoas têm entre 163cm e 180cm.\nOrdene o dataframe idade de forma descrescente.\nOrdene o dataframe profissao lexicograficamente.\nVerifique quais informações de Dionisio estão presentes nos 4 dataframes.\nAltere a profissão da Renata para “Cientista”\nRetorne quantas pessoas possuem todas as informações (Peso, Altura, Idade e Profissão) e armazene em um novo dataframe\n\n\nCom os seguintes dataframes, responda:\n\n\namostra1 &lt;- data.frame(\"genero\" = c(\"Prevotella\", \"Prevotella\", \"Prevotella\", \"Streptococcus\",\"Neisseria\", \"Neisseria\", \n                                    \"Lactobacillus\", \"Bacteroides\", \"Anaerosporomusa\"),\n                       \"especie\" = c(\"Prevotella_copri\", \"Prevotella_denticola\", \"Prevotella_ruminicola\", \"Streptococcus_infantarius\", \n                                     \"Neisseria_gonorrhoeae\", \"Neisseria_meningitidis\", \"Lactobacillus_iners\", \"Bacteroides_xylanisolvens\",\n                                     \"Anaerosporomusa_subterranea\"), stringsAsFactors = F)\n\namostra2 &lt;- data.frame(\"genero\" = c(\"Prevotella\", \"Prevotella\", \"Streptococcus\", \"Streptococcus\", \"Neisseria\", \"Neisseria\", \"Bacteroides\", \n                                    \"Fusobacterium\", \"Pseudoalteromonas\", \"Achromobacter\", \"Aggregatibacte\"),\n                       \"especie\" = c(\"Prevotella_denticola\", \"Prevotella_ruminicola\", \"Streptococcus_infantarius\", \"Streptococcus_equi\", \n                                     \"Neisseria_gonorrhoeae\", \"Neisseria_meningitidis\", \"Bacteroides_xylanisolvens\", \"Fusobacterium_nucleatum\", \n                                     \"Pseudoalteromonas_sp._S558\", \"Achromobacter_sp._KAs_3-5\", \"Aggregatibacter_actinomycetemcomitans\"), stringsAsFactors = F)\n\n\nQuantas espécies da amostra 1 também estão presentes na amostra 2?\nQuantas espécies da amostra 2 também estão presentes na amostra 1?\nQuais as posições e os valores dessas espécies?\n\n\nConsidere o dataframe abaixo:\n\n\ndf &lt;- data.frame(col1 = 1:3, col2 = 2:4, col3 = 3:5)\n\nFaça a seleção dos elementos do dataframe utilizando duas abordagens diferentes: a abordagem utilizada na indexação de matrizes e a abordagem para indexação de listas.\n\nSelecione a primeira coluna\n3º elemento da 2ª coluna",
     "crumbs": [
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Data.frames</span>"
@@ -262,9 +262,9 @@
   {
     "objectID": "content/06_imp_exp.html",
     "href": "content/06_imp_exp.html",
-    "title": "\n6  Importação e exportação de dados\n",
+    "title": "6  Importação e exportação de dados",
     "section": "",
-    "text": "6.1 Importando arquivos\nVamos aqui listar algumas funções úteis para a importação de arquivos no R.\nA função source() carrega arquivos de scripts em R e executa os comandos ali contidos.\n# Caminho onde o script está salvo\nsource(\"/home/usuario/Área de Trabalho/script.R\")\nA função load() permite o carregamento de arquivos binários reconhecíveis pelo R. A extensão .RData é reconhecida pelo RStudio.\n# Caminho onde o .RData está salvo\nload(\"/home/usuario/Área de Trabalho/arquivo.RData\")",
+    "text": "6.1 Importando arquivos\nUma das habilidades básicas necessárias para se fazer análises com o R é importar arquivos e fazer conexões com, por exemplo, bancos de dados, e exportar os resultados obtidos em formatos que possam ser lidos pela maioria dos softwares atuais.\nVamos aqui listar algumas funções úteis para a importação de arquivos no R.\nA função source() carrega arquivos de scripts em R e executa os comandos ali contidos.\n# Caminho onde o script está salvo\nsource(\"/home/usuario/Área de Trabalho/script.R\")\nA função load() permite o carregamento de arquivos binários reconhecíveis pelo R. A extensão .RData é reconhecida pelo RStudio.\n# Caminho onde o .RData está salvo\nload(\"/home/usuario/Área de Trabalho/arquivo.RData\")",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Importação e exportação de dados</span>"
     ]
@@ -272,7 +272,7 @@
   {
     "objectID": "content/06_imp_exp.html#importando-arquivos",
     "href": "content/06_imp_exp.html#importando-arquivos",
-    "title": "\n6  Importação e exportação de dados\n",
+    "title": "6  Importação e exportação de dados",
     "section": "",
     "text": "source()\n\n\n\n\nload()",
     "crumbs": [
@@ -282,9 +282,9 @@
   {
     "objectID": "content/06_imp_exp.html#importando-dados-tabulares",
     "href": "content/06_imp_exp.html#importando-dados-tabulares",
-    "title": "\n6  Importação e exportação de dados\n",
-    "section": "\n6.2 Importando dados tabulares",
-    "text": "6.2 Importando dados tabulares\nA principal função para importar dados tabulares (tabelas, planilhas, etc.) para o R é a read.table(). Esta função possui vários argumentos que podem ser modificados.\nAntes de carregar dados tabulares no R, é importante saber como o dado está organizado (se a separação entre as colunas é feita por tabulação ou por vírgula, por exemplo.)\nAlguns argumentos cuja modificação pode ser útil para a importação da tabela:\n\n\nfile: caminho do diretório onde o arquivo está.\n\nheader: se FALSE, não considera o cabeçalho (se houver) da tabela\n\nsep: como o dado está separado. Se por tabulação, sep = \"\\t\", se por vírgula, sep = \",\"\n\n\ndec: como os números decimais são definidos, se com “.” ou “,”.\n\ncol.names e row.names: recebem um vetor contendo os nomes das colunas e das linhas, respectivamente.\n\nquote: atribui um caracter para as aspas. Por padrão, atribui ““.\n\ncomment.char: atribui um caracter para ser usado como comentário.\n\nskip: valor numérico. Pula a importação da quantidade definida de linhas.\n\nstringsAsFactors: se uma das colunas da tabela for um vetor de caracteres, a opção TRUE a considera como um vetor de fatores.\n\nOutras duas funções bastante utilizadas são derivadas da função read.table(). Estas possuem os mesmos argumentos da função read.table().\n\n\nread.delim(): por default, considera o argumento sep = \"\\t\". Útil para a importação de arquivos cujos elementos são separados por tabulações.\n\nread.csv(): por default, considera o argumento sep = \",\". Útil para leitura de arquivos .csv.",
+    "title": "6  Importação e exportação de dados",
+    "section": "6.2 Importando dados tabulares",
+    "text": "6.2 Importando dados tabulares\nA principal função para importar dados tabulares (tabelas, planilhas, etc.) para o R é a read.table(). Esta função possui vários argumentos que podem ser modificados.\nAntes de carregar dados tabulares no R, é importante saber como o dado está organizado (se a separação entre as colunas é feita por tabulação ou por vírgula, por exemplo.)\nAlguns argumentos cuja modificação pode ser útil para a importação da tabela:\n\nfile: caminho do diretório onde o arquivo está.\nheader: se FALSE, não considera o cabeçalho (se houver) da tabela\nsep: como o dado está separado. Se por tabulação, sep = \"\\t\", se por vírgula, sep = \",\"\ndec: como os números decimais são definidos, se com “.” ou “,”.\ncol.names e row.names: recebem um vetor contendo os nomes das colunas e das linhas, respectivamente.\nquote: atribui um caracter para as aspas. Por padrão, atribui ““.\ncomment.char: atribui um caracter para ser usado como comentário.\nskip: valor numérico. Pula a importação da quantidade definida de linhas.\nstringsAsFactors: se uma das colunas da tabela for um vetor de caracteres, a opção TRUE a considera como um vetor de fatores.\n\nOutras duas funções bastante utilizadas são derivadas da função read.table(). Estas possuem os mesmos argumentos da função read.table().\n\nread.delim(): por default, considera o argumento sep = \"\\t\". Útil para a importação de arquivos cujos elementos são separados por tabulações.\nread.csv(): por default, considera o argumento sep = \",\". Útil para leitura de arquivos .csv.",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Importação e exportação de dados</span>"
     ]
@@ -292,8 +292,8 @@
   {
     "objectID": "content/06_imp_exp.html#importando-arquivos-de-estrutura-desconhecida",
     "href": "content/06_imp_exp.html#importando-arquivos-de-estrutura-desconhecida",
-    "title": "\n6  Importação e exportação de dados\n",
-    "section": "\n6.3 Importando arquivos de estrutura desconhecida",
+    "title": "6  Importação e exportação de dados",
+    "section": "6.3 Importando arquivos de estrutura desconhecida",
     "text": "6.3 Importando arquivos de estrutura desconhecida\nQuando lidamos com arquivos dos quais desconhecemos a sua estrutura, podemos dispor de algumas estratégias para facilitar a importação deles para o R.\nPodemos usar a função readLines(). Esta função pode abrir uma conexão (ver adiante) com um arquivo e ler o conteúdo de suas linhas. A saída da função é um vetor de caracteres, onde o conteúdo de cada linha do arquivo original compreenderá uma posição do vetor de saída. Este procedimento pode revelar como o dado está organizado: se é um dado tabulado, como os elementos de cada coluna estão separados, etc.\n\n# Irá ler as 10 primeiras linhas do arquivo\nreadLines(\"COG.mappings.v9.0.txt\", 10) \n\nUma outra forma de desvendar a estrutura de um arquivo é usando a função scan(). A saída da função scan() é um vetor de caracteres onde cada string do arquivo original compreenderá uma posição do vetor de saída.\n\nscan(file = 'COG.mappings.v9.0.txt', nlines = 10, what = character())",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Importação e exportação de dados</span>"
@@ -302,8 +302,8 @@
   {
     "objectID": "content/06_imp_exp.html#conexões",
     "href": "content/06_imp_exp.html#conexões",
-    "title": "\n6  Importação e exportação de dados\n",
-    "section": "\n6.4 Conexões",
+    "title": "6  Importação e exportação de dados",
+    "section": "6.4 Conexões",
     "text": "6.4 Conexões\nAs funções citadas anteriormente tem em comum a capacidade de abrirem conexões com arquivos e extraírem as informações neles contidas. Além destas, o R possui muitas outras funções para lidar com outros tipos de arquivos e dados externos ao R.\nPode-se também estabelecer conexões com sites da web:\n\n# url() abre uma conexão com arquivo web\ncon &lt;- url(\"http://www.tribunadonorte.com.br/\", \"r\", 10)\nx &lt;- readLines(con)\nx[1:10]\nclose(con)",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Importação e exportação de dados</span>"
@@ -312,8 +312,8 @@
   {
     "objectID": "content/06_imp_exp.html#salvando-arquivos",
     "href": "content/06_imp_exp.html#salvando-arquivos",
-    "title": "\n6  Importação e exportação de dados\n",
-    "section": "\n6.5 Salvando arquivos",
+    "title": "6  Importação e exportação de dados",
+    "section": "6.5 Salvando arquivos",
     "text": "6.5 Salvando arquivos\nOs objetos do R podem ser salvos em arquivos .RData por meio da função save(). Uma quantidade indeterminada de objetos podem ser salvos no mesmo arquivo .RData.\n\nsave(unido, biometria, esportes, file = \"arquivo.RData\")    \n\nOutra funcionalidade útil é a exportação de objetos tabulares do R para arquivos de texto. Para isso, usamos a função write.table(). Esta função possui argumentos semelhantes aos da função read.table().\nAo usar a função write.table(), é importante definir o diretório no qual o arquivo será salvo e o tipo de separador usado para separar os elementos (argumento sep). Segue a seguinte estrutura:\n\nwrite.table(&lt;objeto&gt;, file = &lt;diretório de destino&gt;, sep = &lt;separador&gt;)\n\nExemplo:\n\nwrite.table(table1, file = \"arquivo.txt\", sep = \"\\t\", row.names = FALSE, quote = FALSE)\n\nAlém disso, também como a função read.table(), write.table() possui outras funções genéricas como write.csv(), por exemplo, a qual possui o argumento sep = \",\" por default.",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Importação e exportação de dados</span>"
@@ -322,8 +322,8 @@
   {
     "objectID": "content/06_imp_exp.html#desafio",
     "href": "content/06_imp_exp.html#desafio",
-    "title": "\n6  Importação e exportação de dados\n",
-    "section": "\n6.6 Desafio",
+    "title": "6  Importação e exportação de dados",
+    "section": "6.6 Desafio",
     "text": "6.6 Desafio\n\n\n\n\n\n\nPratique sem IA!\n\n\n\nOs desafios a seguir foram criados para ajudá-lo a desenvolver suas habilidades de forma independente.\nEvite o uso de Inteligência Artificial e tente resolver os problemas por conta própria.\nAprender com a prática fortalecerá seu raciocínio e aprofundará seu conhecimento! 🚀\n\n\nEste exercício será feito usando o arquivo ‘happiness.csv’ em content/data/hapiness.csv\n\nNeste exercício, vamos importar uma tabela (em arquivo de texto) como um dataframe, fazer algumas operações e em seguida vamos salvar o resultado em um outro arquivo de texto. Antes de importar o arquivo, verifique sua estrutura (como as colunas estão separadas, se tem cabeçalho, etc.)\n\n\nImporte o arquivo corretamente e o armazene em uma variável. Obs.: A tabela possui alguns campos numéricos onde o separador decimal é uma vírgula. Importe a tabela de modo que as vírgulas sejam transformadas em pontos (procure ajuda na documentação das funções de importação vistas na aula).\nVerifique se a classe das colunas do dataframe condizem com o tipo de dado armazenado. Por exemplo, a coluna dos países é um vetor de caracter?\nCrie um subset do dataframe contendo apenas as informações dos países da América Latina e Caribe.\nDe acordo com o rank de felicidade, qual país da América Latina é o mais feliz?\nCrie um outro subset contendo apenas os países europeus. Calcule a média de felicidade (baseando-se no score de felicidade) dos países europeus e dos países da América Latina. Em qual região as pessoas são mais felizes?\nSalve o dataframe com as informações da América Latina em um arquivo de texto. Ele deve utilizar como separador o ‘;’.",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Importação e exportação de dados</span>"
@@ -332,9 +332,9 @@
   {
     "objectID": "content/07_func_escop.html",
     "href": "content/07_func_escop.html",
-    "title": "\n7  Definindo funções em R\n",
+    "title": "7  Definindo funções em R",
     "section": "",
-    "text": "7.1 Aspectos gerais das funções em R\nUma função é um objeto capaz de realizar uma ação. Por exemplo, a função mean() obtém a média de um vetor numérico e a função sqrt() realiza o cálculo da raiz quadrada de cada elemento de um vetor numérico.\n# O resultado da função unique() é usado pela função length()\nlength(unique(mtcars$cyl))",
+    "text": "7.1 Aspectos gerais das funções em R\nA capacidade de escrever funções otimiza a execução de tarefas repetitivas e torna o usuário um desenvolvedor de conteúdo.\nUma função é um objeto capaz de realizar uma ação. Por exemplo, a função mean() obtém a média de um vetor numérico e a função sqrt() realiza o cálculo da raiz quadrada de cada elemento de um vetor numérico.\n# O resultado da função unique() é usado pela função length()\nlength(unique(mtcars$cyl))",
     "crumbs": [
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Definindo funções em R</span>"
     ]
@@ -342,7 +342,7 @@
   {
     "objectID": "content/07_func_escop.html#aspectos-gerais-das-funções-em-r",
     "href": "content/07_func_escop.html#aspectos-gerais-das-funções-em-r",
-    "title": "\n7  Definindo funções em R\n",
+    "title": "7  Definindo funções em R",
     "section": "",
     "text": "Funções podem ser usadas de forma encadeada. O resultado de uma função é usado pela função mais externa:",
     "crumbs": [
@@ -352,8 +352,8 @@
   {
     "objectID": "content/07_func_escop.html#fazendo-a-correspondência-dos-argumentos-nas-funções",
     "href": "content/07_func_escop.html#fazendo-a-correspondência-dos-argumentos-nas-funções",
-    "title": "\n7  Definindo funções em R\n",
-    "section": "\n7.2 Fazendo a correspondência dos argumentos nas funções",
+    "title": "7  Definindo funções em R",
+    "section": "7.2 Fazendo a correspondência dos argumentos nas funções",
     "text": "7.2 Fazendo a correspondência dos argumentos nas funções\nA correspondência dos argumentos de uma função pode ser feita por meio do nome do argumento ou por meio da posição. Vamos tomar como exemplo a função rnorm(), que gera um vetor de n elementos que possui valores que obedecem à distribuição normal.\nA função possui 3 argumentos: n (tamanho do vetor a ser criado), mean (média da distribuição) e sd (desvio padrão da distribuição), nesta ordem. Se os nome dos argumentos não forem definidos na chamada da função, ela assumirá que o primeiro argumento corresponde ao n, o segundo ao mean e o terceiro ao sd.\nVamos criar um vetor de 100 elementos com média 1 e desvio padrão 2.\n\n# Argumentos da função rnorm\nargs(rnorm)\n\n\n# Fazendo a correspondência pela posição dos argumentos \nrnorm(100, 1, 2) \n\n\n# Fazendo a correspondência pelo nome dos argumentos\nrnorm(mean = 1, n = 100, sd = 2)\n\nAmbas as utilizações irão gerar e mesmo resultado.\nObserve, ainda, que as funções podem apresentar argumentos que já possuem uma valor pré-definido. Na função rnorm(), os argumentos mean() e sd() possuem valores pré-definidos.\n\n# A função irá executar mesmo sem o fornecimento dos outros argumentos.\nrnorm(n = 100) \n\nEntretanto, observe que o argumento n não possui valor pré-definido. A ausência deste argumento impossibilita a execução da função.\n\nrnorm()",
     "crumbs": [
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Definindo funções em R</span>"
@@ -362,8 +362,8 @@
   {
     "objectID": "content/07_func_escop.html#anatomia-das-funções-em-r",
     "href": "content/07_func_escop.html#anatomia-das-funções-em-r",
-    "title": "\n7  Definindo funções em R\n",
-    "section": "\n7.3 Anatomia das funções em R",
+    "title": "7  Definindo funções em R",
+    "section": "7.3 Anatomia das funções em R",
     "text": "7.3 Anatomia das funções em R\nAs funções possuem três elementos primordiais:\n\nArgumentos: parâmetros que possibilitam a execução da ação. Ao definir a função, os argumentos podem assumir qualquer nome;\nCorpo: sequência de passos para resultar no objetivo da função;\nAmbiente: quando uma função é definida, ela cria um ambiente pŕoprio, onde as variáveis criadas dentro dela possuem valores próprios.\n\n\n7.3.1 Definindo funções\nAlgumas propriedades das funções:\n\nA função function() cria funções definidas pelo próprio usuário:\n\n\nmy_fun &lt;- function(arg1, arg2) { # Argumentos\n    # Corpo da função\n}\n\n\nAs funções podem ter uma quantidade indeterminada de argumentos e, inclusive, não apresentar argumentos:\n\n\n# Imprime 12. Não possui argumentos.\nf &lt;- function() { \n      12\n}\nf()\n\n\n# Simplesmente imprime \"BU!\" com qualquer argumento.\nf1 &lt;- function(x) { \n      \"BU!\"\n}\nf1()\n\n\nOs argumentos das funções podem apresentar um valor pré-definido:\n\n\n# y possui um valor pré-definido\nf2 &lt;- function(x, y = 10) { \n      x + y\n}\nf2(2)\nf2(2, 4)\n\n\nQuando definimos um objeto dentro de uma função e este representa o resultado final da função, é necessário retornar seu valor. Para isso, podemos usar a função return() ou print():\n\n\n# Imprimir o resultado calculado\nf3 &lt;- function(a, b) {\n      res &lt;- c()\n      res[1] &lt;- a^2\n      res[2] &lt;- b + 1\n      print(res) \n}\nf3(2, 4)\n\n\nFuncões podem existir dentro de outras funções:\n\n\nmake.power &lt;- function(n) {\n      pow &lt;- function(x) {\n            x^n\n      }\n      pow\n}\n\ncube &lt;- make.power(3)\nsquare &lt;- make.power(2)\n\ncube(3)\nsquare(2)",
     "crumbs": [
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Definindo funções em R</span>"
@@ -372,8 +372,8 @@
   {
     "objectID": "content/07_func_escop.html#ambientes-e-escopo-das-funções",
     "href": "content/07_func_escop.html#ambientes-e-escopo-das-funções",
-    "title": "\n7  Definindo funções em R\n",
-    "section": "\n7.4 Ambientes e escopo das funções",
+    "title": "7  Definindo funções em R",
+    "section": "7.4 Ambientes e escopo das funções",
     "text": "7.4 Ambientes e escopo das funções\nAntes de qualquer coisa, precisamos entender o conceito de variáveis livres. As variáveis livres são variáveis que não são argumentos das funções e nem foram definidas dentro da função (no escopo da função). As regras de escopo definem como o R irá tentar buscar o valor correspondente a essa variável livre. Por exemplo:\n\nfun &lt;- function(x, y) {\n    x + y + z\n}\n\nA função acima possui a variável z, porém ela não foi definida nem como argumento nem no escopo da função.\nAmbientes correspondem a um conceito abstrato para definir um conjunto de objetos. O ambiente mais usado interativamente pelo usuário é o Global Environment ou ambiente global, que guarda as objetos e funções que construímos em uma sessão do R. Quando estamos trabalhando no console e queremos obter o valor de um objeto, o R irá procurar pelo objeto primeiramente no ambiente global e, se não encontrar, irá procurar nos outros ambientes.\nPara se ter uma ideia de quantos e quais os ambientes podem existir, podemos usar a função search().\n\nsearch()\n\nTendo em vista a ideia de ambiente, consideremos a função fun() definida anteriormente. O valor da variável z é buscado inicialmente no escopo da função, em seguida no ambiente global e, se não encontrado, é buscado nos outros ambientes. Se, após o término da busca, o valor desta variável não for encontrado, a função retornará um erro:\n\nfun &lt;- function(x, y) {\n    x + y + z\n}\nfun(1, 3)\n\nMais exemplos:\n\nf4 &lt;- function(x, y) {              \n      x^2 + y/z\n}\nf4(2, 4)\n\nNo caso a seguir, o valor da variável z é definido no ambiente global e possibilita a execução da função.\n\nz &lt;- 3\nf4 &lt;- function(x, y) {              \n      x^2 + y/z\n}\nf4(2, 4)",
     "crumbs": [
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Definindo funções em R</span>"
@@ -382,8 +382,8 @@
   {
     "objectID": "content/07_func_escop.html#outros-exemplos",
     "href": "content/07_func_escop.html#outros-exemplos",
-    "title": "\n7  Definindo funções em R\n",
-    "section": "\n7.5 Outros exemplos",
+    "title": "7  Definindo funções em R",
+    "section": "7.5 Outros exemplos",
     "text": "7.5 Outros exemplos\nCriando uma função para adicionar dois números:\n\n# x e y são os argumentos da função definida\n# O que a função faz: adiciona dois números\nadd_num &lt;- function(x, y) {\n    x + y \n}\nadd_num(x = 2, y = 3)\n\nCriando uma função para calcular a média de um vetor numérico:\n\ncalc_media &lt;- function(vetor) {\n    sum(vetor)/length(vetor)\n}\ncalc_media(c(1, 2, 3, 4))\n\nCriando uma função que obtenha os valores extremos de um vetor numérico:\n\n# Após criar uma variável dentro do escopo da função, devemos retornar o valor da variável.\nobter_extremos &lt;- function(vetor) {\n    res &lt;- c(min(vetor, na.rm = TRUE), max(vetor, na.rm = TRUE))\n    print(res)  \n}\nobter_extremos(c(1, 2, 3, 4))",
     "crumbs": [
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Definindo funções em R</span>"
@@ -392,8 +392,8 @@
   {
     "objectID": "content/07_func_escop.html#desafio",
     "href": "content/07_func_escop.html#desafio",
-    "title": "\n7  Definindo funções em R\n",
-    "section": "\n7.6 Desafio",
+    "title": "7  Definindo funções em R",
+    "section": "7.6 Desafio",
     "text": "7.6 Desafio\n\n\n\n\n\n\nPratique sem IA!\n\n\n\nOs desafios a seguir foram criados para ajudá-lo a desenvolver suas habilidades de forma independente.\nEvite o uso de Inteligência Artificial e tente resolver os problemas por conta própria.\nAprender com a prática fortalecerá seu raciocínio e aprofundará seu conhecimento! 🚀\n\n\n\nCrie uma função chamada de ‘f1’ que possua uma outra função ‘f2’, esta definida dentro do escopo de ‘f1’.\n\nA função interna (‘f2’) deve fazer duas coisas: - Imprimir no console o ambiente atual com a função environment() - Imprimir os objetos pertencentes ao seu escopo com a função ls().\nA função externa (‘f1’) deve fazer 3 coisas: - Deve chamar a função ‘f2’ - Imprimir no console o ambiente atual com a função environment() - Imprimir os objetos pertencentes ao seu escopo com a função ls().\nUma vez definidas estas funções, chame a função externa e responda: os ambientes exibidos são os mesmos? Justifique.\n\nCom base nas regras de escopo do R, justifique o resultado das chamadas das funções abaixo:\n\n\n# Ex.:1\n\nx &lt;- 12\nf1 &lt;- function(y) {\n  x &lt;- 10\n  f2 &lt;- function() {\n    print(x + y)\n  }\n  f2()\n}\n\nf1(4)\n\n# Ex.:2\nz &lt;- 10\nf3 &lt;- function(x, y) {\n  x * y * z\n}\nf3(1, 2)\n\n\nLeia o arquivo network.txt. Ele será usado nas questões 1 a 3. Este conjunto de dados representa uma rede de interação entre proteínas, cujos nomes aparecem nas colunas node1* e node2*. As demais colunas representam scores usados para inferir a força da interação. A coluna combined_score representa o score combinado destas diferentes fontes e representa a confiança total para cada interação.\n\nComo este arquivo representa uma rede, cada linha do dataframe lido será uma interação entre duas proteínas. Ou seja, os nós da rede estão representados nas colunas node1* e node2* e as arestas são as interações entre node1* e node2*.\n\nnetwork &lt;- read.table(\"data/network.txt\", sep = \"\\t\", stringsAsFactors = F, header = T)\n\n\nCrie a função ‘filtrar_rede’ para selecionar as interações da rede com score combinado maior que 0.700.\n\n\nInput: dataframe da rede ‘network’.\nOutput: dataframe filtrado com as interações maiores que 0.700 e contendo apenas 3 colunas (node1, node2 e combined_score) Ex:\n\n\nnrow(filtrar_rede(network = network))\n # [1] 948\n\n\nCrie a função ‘vizinhos’ que calcule a conectividade (quantidade de interações) de um determinado nó da rede e quais são os nós que se conectam com ele.\n\n\nInput: dois argumentos: nome da proteína e o dataframe onde será feita a operação\nOutput: Imprimir no console a conectividade do nó escolhido e quais são seus vizinhos. Ex:\n\n\nvizinhos(symbol = \"NGF\", network = network)\n # O gene  NGF tem  16 vizinhos\n # PIK3R1 CASP6 IKBKB NTRK1 NFKBIA PIK3CB NFKB1 PIK3R2 BAD PIK3CA CASP3 MYD88 CHUK RELA IRAK1 IKBKG\n\n\nAinda sobre o dataset ‘network’, crie uma função que receba como argumentos o nome de um gene, o dataframe da rede e o score de homologia (coluna homology), e retorne um dataframe que mostre as interações deste gene (colunas ‘node1’ e ‘node2’) para um score de homologia maior ou igual um determinado valor. Use 0.5 como um valor padrão para este limiar de score de homologia.\n\n\nInput: homologia(symbol = “CHUK”, network = network)\nOutput: &gt; homologia(“CHUK”, network)\n\n\nnode1 node2 homology\n\n24 CHUK IRAK4 0.625\n\n271 CHUK RIPK1 0.525\n\n521 CHUK MAP3K14 0.515\n\n950 AKT2 CHUK 0.656\n\n1158 CHUK AKT3 0.638\n\n1182 CHUK AKT1 0.656\n\n1400 CHUK IKBKB 0.936\n\n1712 CHUK CHEK1 0.679\n\n\nImporte o arquivo contents/data/COGs.RData, disponível no sigaa, que foi usado na aula de Importação e Exportação de dados. Use o dataframe contents/data/cog.human.data load(“COGs.RData”)\n\nFaça uma função que retorne o número de grupos de ortólogos (identificadores da coluna cog_id) de uma determinada espécie (coluna spp_id)\n\nInput: dois argumentos - identificador da espécie e o dataframe\nOutput: número de COGs do organismo Ex:\n\n\ncontar_cogs(spp = 3702, df = cog.human.data)\n# [1] 4367\n\n\nConsidere o dataset ‘attitude’. Escreva uma função que receba como argumento o nome de uma das colunas e retorne um dataframe contendo o valor da média, mediana, soma das observações, e quantidade de valores faltantes (NA) na coluna:\n\n\nInput: estatisticas(attitude, “rating”)\nOutput: dataframe com os resultados Ex:\n\n\nestatisticas(attitude, \"rating\")\n# media mediana soma n_na\n# 1 64.63333    65.5 1939    0",
     "crumbs": [
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Definindo funções em R</span>"
