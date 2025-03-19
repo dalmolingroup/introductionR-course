@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://dalmolingroup.github.io/introductionR-course/index.html</loc>
+    <lastmod>2025-03-19T14:02:15.328Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dalmolingroup.github.io/introductionR-course/content/01_history.html</loc>
+    <lastmod>2025-03-19T14:02:15.044Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dalmolingroup.github.io/introductionR-course/content/02_operation.html</loc>
+    <lastmod>2025-03-19T14:02:15.044Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dalmolingroup.github.io/introductionR-course/content/03_vectors.html</loc>
+    <lastmod>2025-03-19T14:02:15.044Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dalmolingroup.github.io/introductionR-course/content/04_matrix_lists_arrays.html</loc>
+    <lastmod>2025-03-19T14:02:15.048Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dalmolingroup.github.io/introductionR-course/content/05_dataframes.html</loc>
+    <lastmod>2025-03-19T14:02:15.048Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dalmolingroup.github.io/introductionR-course/content/06_imp_exp.html</loc>
+    <lastmod>2025-03-19T14:02:15.048Z</lastmod>
+  </url>
+  <url>
+    <loc>https://dalmolingroup.github.io/introductionR-course/content/07_func_escop.html</loc>
+    <lastmod>2025-03-19T14:02:15.048Z</lastmod>
+  </url>
+</urlset>
